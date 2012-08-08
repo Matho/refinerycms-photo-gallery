@@ -1,0 +1,31 @@
+<div id="photo-<%=  photo.id %>" class="form-photo-field">
+  <%= fields_for "photos[photo]", photo, :index => photo.id do |p|%>
+      <div class="form_photo_left">
+        <%= link_to (image_tag  photo.file.collection.url), photo.file.single.url, {:target=> "_blank"} %>
+      </div>
+
+      <div class="form_photo_right">
+        <div class='field'>
+          <%= p.label :title %>
+          <%= p.text_field :title, :class => "larger" %>
+        </div>
+
+        <div class='field'>
+          <%= p.label :description %>
+          <%= p.text_area :description, :rows => "5", :cols=> "57" %>
+        </div>
+
+        <div class='field-group'>
+            <%= p.label :longitude, :tooltip=> t('.use_decimal_format') %>
+            <%= p.text_field :longitude, :size=> 13 %>
+
+            <%= p.label :latitude , :tooltip=> t('.use_decimal_format') %>
+            <%= p.text_field :latitude, :size=> 13  %>
+        </div>
+
+
+        <%= render :partial => "form_fields_actions", :locals => { :photo => photo } %>
+      </div>
+  <% end%>
+  <div class="form_photo_cleaner"></div>
+</div>

@@ -1,0 +1,7 @@
+<%= form_for :photos, :url => refinery.update_multiple_photo_gallery_admin_photos_path, :html => { :method => :put, :id=> "form_edit_photos" } do |f| %>
+    <% for photo in @photos %>
+        <%= render :partial=> 'form_fields', :locals => {:f => f, :photo => photo} %>
+    <% end%>
+
+    <%= render :partial=> 'form_actions', :locals => {:f => f} %>
+<% end %>

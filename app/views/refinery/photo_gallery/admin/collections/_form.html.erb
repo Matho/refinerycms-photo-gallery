@@ -1,0 +1,32 @@
+<%= form_for [refinery, :photo_gallery_admin, @collection] do |f| -%>
+    <%= render :partial => "/refinery/admin/error_messages",
+               :locals => {
+                       :object => f.object,
+                       :include_object_name => true
+               } %>
+
+    <div class='field'>
+      <%= f.label :title -%>
+      <%= f.text_field :title, :class => 'larger widest' -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :cols=>'65', :rows=>'7' %><br />
+    </div>
+
+    <%= render :partial => "/refinery/admin/form_actions",
+               :locals => {
+                       :f => f,
+                       :continue_editing => false,
+                       :delete_title => t('delete', :scope => 'refinery.photo_gallery.admin.collections.collection')
+               } %>
+<% end %>
+
+
+
+
+
+
+
+

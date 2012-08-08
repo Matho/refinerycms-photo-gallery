@@ -1,0 +1,109 @@
+.folder_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/folder.png');
+}
+.folder_add_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/folder_add.png');
+}
+.folder_edit_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/folder_edit.png');
+}
+
+.photo_add_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/photo_add.png');
+}
+
+.photo_add_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/photo_add.png');
+}
+.photo_edit_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/photo_edit.png');
+}
+
+.album_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/album.png');
+}
+.album_add_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/album_add.png');
+}
+.album_edit_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/album_edit.png');
+}
+
+
+
+.settings_icon {
+  background-image: image-url('refinery/photo_gallery/admin/icons/cog.png');
+}
+
+ul.collapsible_menu li {
+  position: relative;
+}
+ul.collapsible_menu li span.arrow {
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  width: 11px;
+  height: 7px;
+  cursor: pointer;
+}
+ul.collapsible_menu li span.arrow {
+  background-image: image-url('refinery/photo_gallery/admin/icons/up.gif');
+}
+ul.collapsible_menu li.closed span.arrow {
+  background-image: image-url('refinery/photo_gallery/admin/icons/down.gif');
+}
+ul.collapsible_menu > div {
+  width: 93%;
+  margin: 0px auto;
+}
+ul.admin_categories{
+  height:200px;
+  overflow:auto;
+  border:1px solid #ccc;
+  padding:5px;
+}
+ul.admin_categories, ul.admin_categories li {
+  list-style: none;
+  margin:5px 0;
+}
+
+div.form_photo_left  {
+  float:left;
+}
+div.form_photo_left img {
+  margin:10px;
+}
+
+div.form_photo_right  {
+  float:left;
+}
+
+div.form-photo-field {
+  margin-bottom:40px;
+}
+
+div.form_photo_cleaner {
+  clear:both;
+}
+div.field-group {
+  margin-top:10px;
+}
+
+
+
+div.field-group label {
+  display:inline;
+}
+
+form div#upload_progress {
+  text-align: center;
+  display: none;
+}
+
+form div#form_actions {
+  display:none;
+}
+
+
+

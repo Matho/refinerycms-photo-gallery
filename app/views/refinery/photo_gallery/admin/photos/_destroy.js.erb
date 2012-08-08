@@ -1,0 +1,15 @@
+$(function() {
+    if(  $('#photo-<%= photo.id %>').remove().fadeOut('slow') ) {
+
+        var flash_msg = '<div id="flash_container">' +
+                            '<div id="flash" class="flash flash_notice" style="visibility: visible; opacity: 1;">'+
+                                '<%=  t('deleted', :scope=> 'refinery.photo_gallery.admin.photos.photo', :title=> @photo.title)  %>' +
+                                    '<a href="" id="flash_close">' +
+                                        '<%= t('close', :scope=> "refinery.message") %>' +
+                                    '</a>' +
+                            '</div>' +
+                        '</div>';
+
+        $('#flash_container').replaceWith(flash_msg);
+    }
+});

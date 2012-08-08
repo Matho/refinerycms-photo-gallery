@@ -1,0 +1,15 @@
+<div class="form-actions">
+  <div class="form-actions-left">
+    <%#TODO <input type="checkbox"> Set as album preview image %>
+
+  </div>
+  <div class="form-actions-right">
+    <%= link_to( t('refinery.admin.form_actions.delete'), refinery.photo_gallery_admin_photo_path(photo.id),
+                 :title=> t('refinery.photo_gallery.admin.photos.photo.delete'),
+                 :method => :delete,
+                 :data => {:confirm =>  t('refinery.admin.delete.message', :title=> photo.title) },
+                 :class => "button confirm-delete")
+
+    %>
+  </div>
+</div>

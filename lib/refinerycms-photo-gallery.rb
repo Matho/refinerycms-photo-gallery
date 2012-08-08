@@ -1,0 +1,1 @@
+require 'refinery/photo_gallery'

@@ -1,0 +1,78 @@
+<%= form_for [refinery, :photo_gallery_admin, @album] do |f| -%>
+    <% album_photos_count = @album.photos.count #reduce sql queries%>
+    <%= render :partial => "/refinery/admin/error_messages",
+               :locals => {
+                       :object => f.object,
+                       :include_object_name => true
+               } %>
+
+    <div class='field'>
+      <%= f.label :title, :class=>"required" %><br />
+      <%= f.text_field :title, {:class => 'larger widest'} %><br />
+    </div>
+
+    <%# TODO  use pop up to create collection %>
+    <div class='field'>
+      <%= label :collection, t('.album_belongs_to_collection')   %>
+      <%= collection_select(:album, :collection_ids, Refinery::PhotoGallery::Collection.all(:order=> "title ASC"), :id, :title,
+                            { },
+                            { :data => {:placeholder=> t('.choose_collection')}, :multiple=> true, :class=> "chzn-select", :style=>"width:400px;"}) %>
+    </div>
+
+    <% if @album.title.blank? || @album.path.blank? # during creating album %>
+        <div class='field'>
+          <%= f.label :path_prefix, t('.path_prefix') %><br />
+          <%= f.text_field :path_prefix, :size=> 5, :maxlength=> 5 %><br />
+        </div>
+    <% elsif album_photos_count == 0 # allow to edit path only if there are no photos in album %>
+        <%#TODO if there are some photos in album, we must change folder paths on disk %>
+        <div class='field'>
+          <%= f.label :path %><br />
+          <%= f.text_field :path %><br />
+        </div>
+    <% end %>
+
+    <div class='field'>
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :cols=>'65', :rows=>'7' %><br />
+    </div>
+
+    <div id="more_photo_options_field">
+      <p><a href="#" id="toggle_advanced_options" title="<%= t('.more_options_tooltip') %>"><%= t('.more_options') %></a></p>
+    </div>
+
+    <div id="more_options" style="display: none;">
+      <div class='field'>
+        <%= f.label :address %><br />
+        <%= f.text_area :address, { :rows => 3} %><br />
+      </div>
+
+      <div class='field'>
+        <%= f.label :latitude %><br />
+        <%= f.text_field :latitude %><br />
+      </div>
+
+      <div class='field'>
+        <%= f.label :longitude %><br />
+        <%= f.text_field :longitude %><br />
+      </div>
+
+
+      <div class='field'>
+        <%= f.label :note %><br />
+        <%= f.text_area :note, :cols=>65, :rows=> 7 %><br />
+      </div>
+    </div>
+
+
+    <br />
+    <%= t('.number_of_photos', :number=> album_photos_count ) %><br/>
+
+
+    <%= render :partial => "/refinery/admin/form_actions",
+               :locals => {
+                       :f => f,
+                       :continue_editing => false,
+                       :delete_title => t('delete', :scope => 'refinery.photo_gallery.admin.albums.album')
+               } %>
+<% end %>

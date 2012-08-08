@@ -1,0 +1,23 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(collection) -%>">
+  <span class='title'>
+    <%= collection.title %>
+    <span class="preview">
+      <%= collection.created_at.try(:strftime, '%b %d, %Y') %>
+    </span>
+  </span>
+  <span class='actions'>
+    <%#= link_to refinery_icon_tag("application_go.png"), refinery.photo_gallery_collection_path(collection),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    <%= link_to (image_tag 'refinery/photo_gallery/admin/icons/folder_edit.png'),
+                refinery.edit_photo_gallery_admin_collection_path(collection),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.photo_gallery_admin_collection_path(collection),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :method => :delete,
+        :data => {
+          :confirm => t('message', :scope => 'refinery.admin.delete', :title => collection.title)
+        } %>
+  </span>
+</li>

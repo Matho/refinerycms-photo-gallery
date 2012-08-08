@@ -1,0 +1,31 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(album) -%>">
+  <span class='title'>
+    <%= album.title %>
+     <%#= album.photos.count %>
+    <span class="preview">
+      <%= album.created_at.try(:strftime, '%b %d, %Y') %>
+    </span>
+  </span>
+  <span class='actions'>
+    <%#= link_to refinery_icon_tag("application_go.png"), refinery.photo_gallery_album_path(album),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+
+    <%= link_to (image_tag 'refinery/photo_gallery/admin/icons/photo_add.png'),
+                refinery.upload_photo_gallery_admin_album_photos_path(album),
+                :title => t('.upload_photos') %>
+    <%= link_to (image_tag 'refinery/photo_gallery/admin/icons/photo_edit.png'),
+                refinery.edit_multiple_photo_gallery_admin_album_photos_path(album),
+                :title => t('.edit_photos') %>
+    <%= link_to (image_tag 'refinery/photo_gallery/admin/icons/album_edit.png'),
+                refinery.edit_photo_gallery_admin_album_path(album),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.photo_gallery_admin_album_path(album),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :method => :delete,
+        :data => {
+          :confirm => t('message', :scope => 'refinery.admin.delete', :title => album.title)
+        } %>
+  </span>
+</li>

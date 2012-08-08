@@ -1,0 +1,9 @@
+<% if @photos.length > 0 %>
+    <%= render :partial=> "form" %>
+<% else  %>
+    <%= raw t('.no_photos_yet',
+              :create => (link_to t('refinery.photo_gallery.admin.albums.album.upload_photos'), refinery.upload_photo_gallery_admin_album_photos_path( @album) )
+            )
+    %>
+
+<% end %>

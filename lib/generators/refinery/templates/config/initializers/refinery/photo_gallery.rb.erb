@@ -1,0 +1,40 @@
+Refinery::PhotoGallery.configure do |config|
+  # At least one or more comma-separated values from list: html5,flash,browserplus,silverlight,gears
+  # config.runtimes = <%= Refinery::PhotoGallery.runtimes.inspect %>
+
+  # Max file size of uploaded image
+  # config.max_file_size = <%= Refinery::PhotoGallery.max_file_size.inspect %>
+
+  # Turn on/off client side resizing. If true, photo will be resized 2 times - on client side to accelerate transmision time, and  also on server side to generate thumbs.
+  # If you want to achieve better quality, choose false.
+  # config.client_side_resize = <%= Refinery::PhotoGallery.client_side_resize.inspect %>
+
+  # Params for client side resizing. E.g:  {:width => 800, :height=> 600, :quality=> 100}
+  # config.client_side_resize_params = <%= Refinery::PhotoGallery.client_side_resize_params.inspect %>
+
+  # Locale name for Plupload. Put your locale file in /app/assets/javascripts/refinery/photo_gallery/admin/plupload/i18n/ and write here filename WITHOUT file extension. E.g: cs
+  # To leave english, put ''
+  # config.locale = <%= Refinery::PhotoGallery.plupload_locale.inspect %>
+
+  # Case insensitive extension white list for carrierwave
+  #  config.extension_white_list = <%= Refinery::PhotoGallery.extension_white_list.inspect %>
+
+  # Directory where uploaded photos will be stored. Absolute adress to Rails root
+  # config.photo_gallery_dir = <%= Refinery::PhotoGallery.photo_gallery_dir.inspect %>
+
+  # After file uploading, there are created 4 versions of this image. If you are not going to recreate this thumbs, delete original uploaded file to save space on disk.
+  # config.delete_uploaded_file = <%= Refinery::PhotoGallery.delete_uploaded_file.inspect %>
+
+  # Thumbs dimensions in pixels. E.g: [950,950] for width:950, height: 950
+  # config.collection_dimensions = <%= Refinery::PhotoGallery.collection_dimensions.inspect %>
+  # config.album_dimensions = <%= Refinery::PhotoGallery.album_dimensions.inspect %>
+  # config.preview_dimensions = <%= Refinery::PhotoGallery.preview_dimensions.inspect %>
+  # config.single_dimensions = <%= Refinery::PhotoGallery.single_dimensions.inspect %>
+
+  # config.collections_per_page = <%= Refinery::PhotoGallery.collections_per_page.inspect %>
+  # config.albums_per_page = <%= Refinery::PhotoGallery.albums_per_page.inspect %>
+  # config.photos_per_page = <%= Refinery::PhotoGallery.photos_per_page.inspect %>
+
+
+
+end

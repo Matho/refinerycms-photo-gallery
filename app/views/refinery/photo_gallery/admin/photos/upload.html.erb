@@ -1,0 +1,87 @@
+<%= content_for :javascripts do  %>
+    <style type="text/css">@import url('/assets/refinery/photo_gallery/admin/plupload/jquery.plupload.queue.css');</style>
+
+    <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/plupload.full.js" -%>
+    <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/jquery.plupload.queue.js"  -%>
+    <% if Refinery::PhotoGallery.plupload_locale.present? %>
+        <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/i18n/" + Refinery::PhotoGallery.plupload_locale + ".js"  -%>
+    <% end %>
+
+    <script type="text/javascript">
+        <% session_key = Rails.application.config.session_options[:key] %>
+        $(document).ready(function() {
+            $("#uploader").pluploadQueue({
+
+                // General settings
+                runtimes : '<%= Refinery::PhotoGallery.runtimes %>',
+                url : '<%= refinery.photo_gallery_admin_photos_path %>',
+                max_file_size : '<%= Refinery::PhotoGallery.max_file_size %>',
+                multipart: true,
+                multipart_params: {
+                    '<%= session_key %>' : encodeURIComponent('<%=  cookies[session_key] %>'),
+                    'authenticity_token' : '<%= form_authenticity_token %>',
+                    'photo[album_id]' : "<%= @album.id %>"
+                },
+
+
+                // Resize images on clientside if we can
+                <% if Refinery::PhotoGallery.client_side_resize %>
+                resize : {width : <%= Refinery::PhotoGallery.client_side_resize_params[:width] %>,
+                    height : <%= Refinery::PhotoGallery.client_side_resize_params[:height] %>,
+                    quality : <%= Refinery::PhotoGallery.client_side_resize_params[:quality] %>},
+                <% end %>
+
+                // Flash settings
+                flash_swf_url : '/assets/refinery/photo_gallery/admin/plupload/plupload.flash.swf',
+
+                // Silverlight settings
+                silverlight_xap_url : '/assets/refinery/photo_gallery/admin/plupload/plupload.silverlight.xap',
+
+                // Post init events, bound after the internal events
+                init : {
+                    FileUploaded: function(up, file, info) {
+                       if (info.status == 500){
+                            alert(info.reponse);
+                        }
+                        else {
+                            $('form div#multiple_photo_edit').append(info.response).fadeIn('slow');
+                        }
+                    },
+                    //TODO this hiding/showing is ugly. Rework this.
+                    StateChanged: function(up) {
+                        // Called when the state of the queue is changed
+                        if (up.state == plupload.STARTED ){
+                            $('form div#upload_progress').show();
+                        }
+                        else if (up.state == plupload.STOPPED){
+                            $('form div#upload_progress').hide();
+                            $('form div#form_actions').fadeIn('slow');
+                        }
+                    }
+                }
+            });
+        })
+    </script>
+<% end %>
+
+<form>
+  <div id="uploader">
+    <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
+  </div>
+  <br>
+</form>
+
+<%= form_for :photos, :url => refinery.update_multiple_photo_gallery_admin_photos_path, :html => { :method => :put, :id=> "form_edit_photos"} do |f| %> <%#TODO DRY  %>
+    <div id="multiple_photo_edit"></div>
+    <div id="upload_progress">
+      <%= image_tag 'refinery/photo_gallery/admin/icons/loading.gif' %>
+    </div>
+    <div id="form_actions" >
+        <%= render :partial=> 'form_actions', :locals => {:f => f} %>
+    </div>
+<% end %>
+
+
+
+<br><%#= link_to "Edit uploaded photos", untouched_album_photos_path( @album ) %>
+<br><%#= link_to "Back to #{@album.title}", @album %>

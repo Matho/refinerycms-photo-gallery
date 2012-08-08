@@ -1,0 +1,28 @@
+<%= render :partial => '/refinery/photo_gallery/admin/submenu' %>
+
+<div id='records'>
+  <% if searching? %>
+      <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
+      <% if @collections.any? %>
+          <ul>
+            <%= render :partial => "collection", :collection => @collections %>
+          </ul>
+      <% else %>
+          <p><%= t('no_results', :scope => 'refinery.admin.search') %></p>
+      <% end %>
+  <% else %>
+      <% if @collections.any? %>
+          <%= will_paginate @collections %>
+
+          <%= render :partial => "sortable_list" %>
+
+          <%= will_paginate @collections %>
+      <% else %>
+          <p>
+            <strong>
+              <%= t('.no_items_yet', :create => t('new', :scope => 'refinery.photo_gallery.admin.submenu.collections')) %>
+            </strong>
+          </p>
+      <% end %>
+  <% end %>
+</div>

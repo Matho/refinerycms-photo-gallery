@@ -1,0 +1,44 @@
+<nav id='actions' class='multilist'>
+  <ul class='search_list'>
+    <li class='not_a_link'>
+      <%= render :partial => "/refinery/admin/search",
+                 :locals => {
+                         :url => refinery.photo_gallery_admin_collections_path
+                 } %>
+    </li>
+  </ul>
+
+  <ul  class='collapsible_menu'>
+    <li class='not_a_link'>
+      <%= link_to t('.collections.title'), '#',
+                  :class => 'folder_icon' %>
+    </li>
+    <li>
+      <%= link_to t('.collections.manage'), refinery.photo_gallery_admin_collections_path,
+                  :class => 'folder_edit_icon' %>
+    </li>
+    <li>
+      <%= link_to t('.collections.new'), refinery.new_photo_gallery_admin_collection_path,
+                  :class => 'folder_add_icon' %>
+    </li>
+  </ul>
+
+  <ul  class='collapsible_menu'>
+    <li class='not_a_link'>
+      <%= link_to t('.albums.title'), '#',
+                  :class => 'album_icon' %>
+    </li>
+    <li>
+      <%= link_to t('.albums.manage'), refinery.photo_gallery_admin_albums_path,
+                  :class => 'album_edit_icon' %>
+    </li>
+    <li>
+      <%= link_to t('.albums.new'), refinery.new_photo_gallery_admin_album_path,
+                  :class => 'album_add_icon' %>
+    </li>
+  </ul>
+
+
+</nav>
+
+<% content_for :stylesheets, stylesheet_link_tag('refinery/photo_gallery/admin/backend') %>

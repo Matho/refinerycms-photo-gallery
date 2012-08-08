@@ -1,0 +1,19 @@
+<% content_for :body_content_right do %>
+    <%= message_albums_length_is_zero %>
+
+     <ul style="list-style-type: disc;">
+    <% @albums.each do |album|  %>
+        <li><%= link_to album.title, refinery.photo_gallery_collection_album_path(:collection_id=> params[:id], :id => album.id) %></li>
+         <%#TODO image thumbnail + description?  %>
+         <%#= link_to (image_tag  photo.file.album.url), photo.file.single.url  %>
+
+    <% end %>
+     </ul>
+
+<% end %>
+
+<% content_for :body_content_left do %>
+    <%= render :partial=> "refinery/photo_gallery/shared/submenu" %>
+<% end %>
+
+<%= render :partial=> "refinery/photo_gallery/shared/layout" %>
