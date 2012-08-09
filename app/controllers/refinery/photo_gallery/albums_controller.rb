@@ -9,6 +9,7 @@ module Refinery
         @collections = Collection.has_albums
 
         @albums = Album.find_by_collection_id(params[:collection_id])
+	@album = Album.find(params[:id])
 
         @photos = Photo.where("album_id = ? ", params[:id]).paginate(:page => params[:page])
 
