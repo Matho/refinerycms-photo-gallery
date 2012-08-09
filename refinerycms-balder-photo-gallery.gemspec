@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary           = %q{Ruby on Rails photo gallery engine for Refinery CMS.}
   s.email             = %q{espen@inspired.no, martin.markech@matho.sk}
   #TODO change homepage
-  s.homepage          = %q{https://github.com/Matho/refinerycms-photo-gallery }
+  s.homepage          = %q{http://github.com/Matho/refinerycms-photo-gallery }
   s.authors           = ['Espen Antonsen', 'Martin Markech']
   s.require_paths     = %w(lib)
 
