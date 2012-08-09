@@ -27,12 +27,17 @@ module Refinery
       end
 
       def exif_read
-        photo = MiniExiftool.new(self.file.file.file, {:numerical=> true})
-        self.longitude = photo.GPSLongitude if self.longitude.nil?
-        self.latitude = photo.GPSLatitude if self.latitude.nil?
-        self.title = photo.DocumentName if photo.DocumentName.present?
-        self.description = photo.ImageDescription if self.description.nil? && photo.ImageDescription != 'Exif_JPEG_PICTURE'
-        # TODO read keywords from exif
+      	 begin
+          photo = MiniExiftool.new(self.file.file.file, {:numerical=> true})
+
+          self.longitude = photo.GPSLongitude if self.longitude.nil?
+          self.latitude = photo.GPSLatitude if self.latitude.nil?
+          self.title = photo.DocumentName if photo.DocumentName.present?
+          self.description = photo.ImageDescription if self.description.nil? && photo.ImageDescription != 'Exif_JPEG_PICTURE'
+          # TODO read keywords from exif
+        rescue
+          p "ERROR raised exception during MiniExiftool reading"
+        end
       end
 
 =begin
