@@ -28,9 +28,9 @@ use it on profit websites.
 
 All screenshots are in folder screenshots
 
-![Photo uploading](screenshots/07_photos#upload-uploading_2.png)
-![Frontend album](screenshots/11_frontend_show.png)
-![Frontend album](screenshots/12_show_photo_using_fancybox.png)
+![Photo uploading](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/07_photos%23upload-uploading_2.png)
+![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/11_frontend_show.png)
+![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/12_show_photo_using_fancybox.png)
 
 
 ## Demo
