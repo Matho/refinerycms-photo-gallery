@@ -198,7 +198,7 @@ Remove gem from Gemfile
 * push to rubygem
 
 
-## Know bugs
+## Known bugs
 
 * Only html5 runtime is now supported
 * Files with spaces in file names are rejected if you upload them using drag&drop
