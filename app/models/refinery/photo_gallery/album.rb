@@ -49,11 +49,14 @@ module Refinery
       def set_path
         #Replaces special characters in tile
 
-        if self.path_prefix.blank?
+         if self.path_prefix.blank?  &&  self.path.blank?
           self.path =  self.title.parameterize
+        elsif self.path.present? && self.title.present?
+          # dont't update path, when album has photos and we change title
         else
           self.path = [self.path_prefix, self.title.parameterize].join('-')
         end
+
       end
     end
   end
