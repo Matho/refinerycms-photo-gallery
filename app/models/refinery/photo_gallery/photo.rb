@@ -37,6 +37,9 @@ module Refinery
           # TODO read keywords from exif
         rescue
           p "ERROR raised exception during MiniExiftool reading"
+	ensure
+          self.description = "" if self.description.nil?  # Because description is concating in helpers, this can't be null
+        end
         end
       end
 
