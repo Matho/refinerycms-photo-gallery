@@ -3,7 +3,7 @@ module Refinery
     class Version
       @major = 0
       @minor = 0
-      @tiny  = '1.dev'
+      @tiny  = '2.dev'
 
       class << self
         attr_reader :major, :minor, :tiny
