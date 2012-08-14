@@ -11,7 +11,7 @@ module Refinery
         @albums = Album.find_by_collection_id(params[:collection_id])
 	@album = Album.find(params[:id])
 
-        @photos = Photo.where("album_id = ? ", params[:id]).paginate(:page => params[:page])
+        @photos = Photo.where("album_id = ? ", params[:id]).paginate(:page => params[:page]).order("id ASC")
 
         respond_to do |format|
           format.html
