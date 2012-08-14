@@ -27,21 +27,21 @@ module Refinery
       end
 
       def exif_read
-      	 begin
+        begin
           photo = MiniExiftool.new(self.file.file.file, {:numerical=> true})
 
           self.longitude = photo.GPSLongitude if self.longitude.nil?
           self.latitude = photo.GPSLatitude if self.latitude.nil?
           self.title = photo.DocumentName if photo.DocumentName.present?
           self.description = photo.ImageDescription if self.description.nil? && photo.ImageDescription != 'Exif_JPEG_PICTURE'
-          # TODO read keywords from exif
+            # TODO read keywords from exif
         rescue
           p "ERROR raised exception during MiniExiftool reading"
-	ensure
+        ensure
           self.description = "" if self.description.nil?  # Because description is concating in helpers, this can't be null
         end
-        end
       end
+
 
 =begin
       #TODO add checkbox to check if it should be writed to exif, globally on/off writing
@@ -60,3 +60,4 @@ module Refinery
     end
   end
 end
+
