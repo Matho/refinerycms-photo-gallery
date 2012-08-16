@@ -75,7 +75,7 @@ Instructions for installation you can find under [www.sno.phy.queensu.ca/~phil/e
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-photo-gallery', '~> 0.0.1.dev', :git => 'git://github.com/Matho/refinerycms-photo-gallery.git'
+gem 'refinerycms-photo-gallery', '~> 0.0.3.dev', :git => 'git://github.com/Matho/refinerycms-photo-gallery.git'
 ```
 
 Now, run 
