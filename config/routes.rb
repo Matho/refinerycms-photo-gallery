@@ -1,7 +1,8 @@
 Refinery::Core::Engine.routes.draw do
   namespace "photo_gallery", :path => 'photo-gallery' do
     root :to => "collections#index"
-
+  
+    match "/collections/:collection_id/albums/:id/page-:page" => "albums#show"
     resources :collections, :only => [:index,:show] do
       resources :albums, :only => [:show] do
       end

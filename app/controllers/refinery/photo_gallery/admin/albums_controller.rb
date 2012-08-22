@@ -2,7 +2,7 @@ module Refinery
   module PhotoGallery
     module Admin
       class AlbumsController < ::Refinery::AdminController
-
+        cache_sweeper AlbumSweeper
         crudify :'refinery/photo_gallery/album', :order => "created_at DESC" , :xhr_paging => true
 
         def create

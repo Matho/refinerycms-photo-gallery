@@ -6,6 +6,7 @@ module Refinery
       class PhotosController < ::Refinery::AdminController
         include PhotosHelper
         helper :"refinery/photo_gallery/admin/photos"
+        cache_sweeper PhotoSweeper
 
         #TODO delete update method from routes
         #TODO delete edit action from routes

@@ -3,19 +3,19 @@ module Refinery
     module PhotoGalleryHelper
 
       def message_albums_length_is_zero
-        if @albums.length == 0
+        if @albums.nil?
           t('.no_albums')
         end
       end
 
       def message_photos_length_is_zero
-        if @photos.length == 0
+        if @photos.nil?
           t('.no_photos')
         end
       end
 
       def message_collections_length_is_zero
-        if @collections.length == 0
+        if @collections.nil?
           t('.no_collections')
         end
       end

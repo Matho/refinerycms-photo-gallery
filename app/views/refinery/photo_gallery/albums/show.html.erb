@@ -1,34 +1,23 @@
 <% content_for :body_content_right do %>
     <%= message_photos_length_is_zero %>
-   
-    <h1 class="single-thumbnail-title post-title-color gdl-title">
-      <%= @album.title %>
-    </h1>
 
-    <div>
-        <%= raw @album.description %>
-    </div>
+    <% cache "refinery/photo_gallery/albums/#{params[:id]}" do %>
+        <h1 class="single-thumbnail-title post-title-color gdl-title">
+          <%= @album.title %>
+        </h1>
 
-    <% @photos.each_with_index do |photo, index|  %>
-        <div class="column portfolio-item">
-          <div class="portfolio-thumbnail-image">
-
-            <%= link_to (image_tag  photo.file.album.url), photo.file.single.url, {
-                    :target=> "_blank",
-                    :class=>"fancybox",
-                    :data =>{:title=> photo_description(photo,@photos, index)},
-                    :rel=>"group",
-                    :title=> photo.title } %>
-          </div>
+        <div>
+          <%= raw @album.description %>
         </div>
     <% end %>
 
-    <div style="clear:both;"></div>
-    <%= will_paginate @photos %>
+    <%= render :partial => "photos" %>
+
 <% end %>
 
 <% content_for :body_content_left do %>
-       <%= render :partial=> "refinery/photo_gallery/shared/submenu" %>
+    <%= render :partial=> "refinery/photo_gallery/shared/submenu" %>
 <% end %>
 
 <%= render :partial=> "refinery/photo_gallery/shared/layout" %>
+
