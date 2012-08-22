@@ -23,6 +23,8 @@ Safari doesn't support direct data access to the selected files. Opera 12.00 + s
 * Fully configurable, fully translatable, searchable
 * Using [Fancybox](http://fancyapps.com/fancybox/) 2.0.6 for frontend image slideshow. Read Fancybox license before you
 use it on profit websites.
+* Fragment caching on frontend
+* Ajaxified pagination with history.pushState on frontend
 
 ## Screenshots
 
@@ -103,6 +105,8 @@ rake db:seed
 ```
 
 You can configure gem in ``your_app_name/config/initializers/refinery/photo_gallery.rb``
+
+If you want to use ajaxy pagination, copy ``app/assets/javascripts/refinery/photo_gallery/photo_gallery.js`` to your app's asset and add to manifest.
 
 Check, if you have ``jquery.js`` included in your backend.
 
