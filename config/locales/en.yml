@@ -7,8 +7,9 @@ en:
     photo_gallery:
       albums:
         show:
-          image: Image
           no_photos: There are no photos in this album yet
+        photos:
+          image: Image
       collections:
         show:
           no_albums: There are no albums in this collection yet

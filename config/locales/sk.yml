@@ -7,8 +7,9 @@ sk:
     photo_gallery:
       albums:
         show:
-          image: Obrázok
           no_photos: V albume sa zatiaľ nenachádzajú žiadne fotografie
+        photos:
+          image: Obrázok
       collections:
         show:
           no_albums: V tejto skupine albumov sa zatiať nenachádza žiadny album
