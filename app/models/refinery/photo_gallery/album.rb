@@ -15,26 +15,18 @@ module Refinery
 
       self.per_page = Refinery::PhotoGallery.albums_per_page
 
+
+      def self.with_collection_id
+        select("refinery_photo_gallery_albums.*, refinery_photo_gallery_collection_albums.collection_id ").joins(:collection_albums)
+      end
+
       scope :find_by_collection_id, lambda {|collection_id|
-            select("refinery_photo_gallery_albums.*").
+        select("refinery_photo_gallery_albums.*").
             joins(:collection_albums).
             where("refinery_photo_gallery_collection_albums.collection_id = ?
                     ", collection_id).
             order('created_at DESC, title ASC')
       }
-=begin
-#TODO marked photo as photo album preview
-      scope :find_by_collection_id, lambda {|collection_id|
-        select("refinery_photo_gallery_albums.*, refinery_photo_gallery_photos.file").
-            joins(:collection_albums, :photos).
-            where("refinery_photo_gallery_collection_albums.collection_id = ? AND
-                   refinery_photo_gallery_photos.album_id  = refinery_photo_gallery_albums.id AND
-                   refinery_photo_gallery_photos.preview_image = true
-                    ", collection_id).
-            order('created_at DESC, title ASC')
-      }
-=end
-
 
       def collection_ids
         Refinery::PhotoGallery::CollectionAlbum.select('collection_id').where("album_id = ?", self.id ).map{|ca| ca.collection_id }

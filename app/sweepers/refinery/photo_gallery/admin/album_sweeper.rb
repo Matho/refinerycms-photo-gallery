@@ -4,16 +4,26 @@ module Refinery
       class AlbumSweeper < ActionController::Caching::Sweeper
         observe Album
 
+
         def sweep_album(album)
           expire_fragment("refinery/photo_gallery/albums/#{album.id}")
+          expire_fragment("refinery/photo_gallery/submenu")
         end
 
         def sweep_album_with_photos(album)
           sweep_album(album)
 
           # only file store supports regexp
-          if  Rails.cache.class.to_s == "ActiveSupport::Cache::FileStore"
-            expire_fragment( %r{refinery/photo_gallery/albums/#{album.id}/page_\d*})
+          # TODO DRY
+          begin
+            # This is slow, but I was unable to get the actual cache folder path.
+            # TODO This should be replaced with FileUtils.rm to get better speed
+            expire_fragment( %r{refinery/photo_gallery/albums/#{photo.album_id}/page_\d*})
+          rescue NotImplementedError
+            Rails.cache.clear
+            warn "**** [REFINERY PHOTO GALLERY] The cache store you are using is not compatible with this engine. Only file_store is supported. Clearing entire cache instead ***"
+          ensure
+            return true
           end
         end
 

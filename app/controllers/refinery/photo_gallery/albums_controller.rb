@@ -8,7 +8,7 @@ module Refinery
       def show
         @collections = Collection.has_albums
 
-        @albums = Album.find_by_collection_id(params[:collection_id])
+        @albums = Album.with_collection_id
         @album = Album.find(params[:id])
 
         @photos = Photo.where("album_id = ? ", params[:id]).paginate(:page => params[:page]).order("id ASC")

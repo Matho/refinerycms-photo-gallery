@@ -6,6 +6,8 @@ module Refinery
 
       def index
         @collections = Collection.has_albums
+        @albums = Album.with_collection_id
+
 
         respond_to do |format|
           format.html
@@ -14,8 +16,9 @@ module Refinery
 
       def show
         @collections = Collection.has_albums
+        @albums = Album.with_collection_id
+        @albums_for_collection = Album.find_by_collection_id(params[:id])
 
-        @albums = Album.find_by_collection_id(params[:id])
 
         respond_to do |format|
           format.html

@@ -23,7 +23,7 @@ module Refinery
 
 
       def generate_photo_gallery_menu( collections, albums, options = {} )
-        content_tag(:ul, {}, options[:ul] ) do
+        content_tag(:ul, options[:ul] ) do
           collections.each do |collection|
 
             if params[:collection_id].present? &&  params[:id].present? # in albums controller
@@ -33,16 +33,17 @@ module Refinery
             else
               collection_id = 0 #only ensure initialization
             end
+            # TODO  if equals, set class="selected"
 
-            concat(content_tag(:li,  {}, options[:li]) do
+            concat(content_tag(:li, options[:li]) do
               concat(link_to collection.title, refinery.photo_gallery_collection_path(collection))
 
-              # display albums of active collection
-              concat(content_tag(:ul, {}, options[:ul] ) do
-                if collection_id  == collection.id.to_s
-                  albums.each do |album|
-                    concat(content_tag(:li,  {}, options[:li]) do
-                      link_to album.title, refinery.photo_gallery_collection_album_path({:id=> album.id, :collection_id => collection_id})
+              concat(content_tag(:ul ) do
+                # render albums, which belongs to collection
+                if !albums.blank?
+                  albums.select{|album| album.collection_id == collection.id.to_s }.each do |album|
+                    concat(content_tag(:li, options[:li] ) do
+                      link_to album.title, refinery.photo_gallery_collection_album_path({:id=> album.id, :collection_id => collection.id})
                     end )
                   end
                 end
@@ -52,7 +53,7 @@ module Refinery
             end)
           end
         end
+        end
       end
     end
   end
-end

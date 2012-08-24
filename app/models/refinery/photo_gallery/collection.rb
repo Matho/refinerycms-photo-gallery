@@ -13,11 +13,12 @@ module Refinery
 
       self.per_page = Refinery::PhotoGallery.collections_per_page
 
-      scope :has_albums, lambda {
+      def self.has_albums
         select("refinery_photo_gallery_collections.*").uniq.
             joins(:collection_albums).
             order('created_at DESC, title ASC')
-      }
+      end
+
 =begin
       def to_param
         "#{id}-#{title.parameterize}"
