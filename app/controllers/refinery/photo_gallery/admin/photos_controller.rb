@@ -20,6 +20,7 @@ module Refinery
         def create
           @photo = Photo.new(params[:photo])
           @photo.file = params[:file]
+          @photo.title = get_filename_part(params[:name])
 
           if @photo.save!
             render :partial=> 'form_fields', :locals => {:photo => @photo }

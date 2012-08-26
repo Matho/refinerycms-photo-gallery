@@ -20,7 +20,7 @@ module Refinery
         end
       end
 
-
+    
 
       def generate_photo_gallery_menu( collections, albums, options = {} )
         content_tag(:ul, options[:ul] ) do
