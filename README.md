@@ -189,17 +189,16 @@ Remove gem from Gemfile
 
 ## Todo list
 
-* fix support for refinerycms-search gem in backend/frontend
+* searching in albums instead of collection (in backend) 
 * add support for amazon S3 storage
 * create app tests
 * repair problems with Flash runtime and test gears, silverlight and HTML4 runtime
 * show live links in admin
-* allow to check which photo is photo album preview
+* allow to check which photo is photo album preview 
 * set albums public/not public.
 * add checkboxes to delete multiple/all photos in album
 * stop uploading
 * travis, codeclimate
-* push to rubygem
 
 
 ## Known bugs
@@ -212,11 +211,11 @@ file extensions to upload queue. ( But server side validation reject these files
 
 ## Road map ?
 
-* album/photo tags using acts_as_taggable
-* show photo location on google maps
-* caching ?
 * GPS editing in degrees,minute,seconds format 
 * album grouping by year (configurable)
+* connect with refinerycms-pages to enable reordering in menu
+* album/photo tags using acts_as_taggable ?
+* show photo location on google maps ?
 
 ## Testing
 
