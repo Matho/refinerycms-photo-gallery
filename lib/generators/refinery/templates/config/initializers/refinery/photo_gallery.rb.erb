@@ -9,7 +9,8 @@ Refinery::PhotoGallery.configure do |config|
   # If you want to achieve better quality, choose false.
   # config.client_side_resize = <%= Refinery::PhotoGallery.client_side_resize.inspect %>
 
-  # Params for client side resizing. E.g:  {:width => 800, :height=> 600, :quality=> 100}
+  # Params for client side resizing. E.g:  {:width => 950, :height=> 950, :quality=> 100} 
+  # This dimmensions should be equal with config.single_dimensions
   # config.client_side_resize_params = <%= Refinery::PhotoGallery.client_side_resize_params.inspect %>
 
   # Locale name for Plupload. Put your locale file in /app/assets/javascripts/refinery/photo_gallery/admin/plupload/i18n/ and write here filename WITHOUT file extension. E.g: cs

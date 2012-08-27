@@ -13,7 +13,7 @@ module Refinery
     #TODO or per album?
     #TODO by default false!
     self.client_side_resize = true
-    self.client_side_resize_params = {:width => 800, :height=> 600, :quality=> 100}
+    self.client_side_resize_params = {:width => 950, :height=> 950, :quality=> 100}
     #TODO leave blank before publishing this gem!
     self.plupload_locale = ''
     self.extension_white_list = %w(jpg jpeg gif png bmp tiff)
