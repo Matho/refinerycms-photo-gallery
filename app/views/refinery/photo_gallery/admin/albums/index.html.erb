@@ -5,7 +5,7 @@
       <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
       <% if @albums.any? %>
           <ul>
-            <%= render :partial => "album", :album => @albums %>
+            <%= render :partial => "album", :collection => @albums %>
           </ul>
       <% else %>
           <p><%= t('no_results', :scope => 'refinery.admin.search') %></p>

@@ -189,7 +189,6 @@ Remove gem from Gemfile
 
 ## Todo list
 
-* searching in albums instead of collection (in backend) 
 * add support for amazon S3 storage
 * create app tests
 * repair problems with Flash runtime and test gears, silverlight and HTML4 runtime
