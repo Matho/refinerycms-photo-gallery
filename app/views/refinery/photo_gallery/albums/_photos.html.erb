@@ -7,7 +7,7 @@
         <div class="column portfolio-item">
           <div class="portfolio-thumbnail-image">
 
-            <%= link_to (image_tag  photo.file.album.url), photo.file.single.url, {
+            <%= link_to (image_tag  photo.file.album.url, :width => Refinery::PhotoGallery.album_dimensions[0], :height => Refinery::PhotoGallery.album_dimensions[1] ), photo.file.single.url, {
                     :target=> "_blank",
                     :class=>"fancybox",
                     :data =>{:title=> photo_description(photo,@photos, index)},
