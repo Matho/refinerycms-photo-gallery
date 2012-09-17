@@ -5,6 +5,11 @@ module Refinery
 
       isolate_namespace Refinery::PhotoGallery
 
+      def self.register(tab)
+        tab.name = tab.name = ::I18n.t(:'refinery.plugins.refinerycms_photo_gallery.tab_name')
+        tab.partial = "/refinery/admin/pages/tabs/photo_gallery"
+      end
+
       initializer "init plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.pathname = root
@@ -24,6 +29,10 @@ module Refinery
       end
 
       config.after_initialize do
+        Refinery::Pages::Tab.register do |tab|
+          register tab
+        end
+
         Refinery.register_engine(Refinery::PhotoGallery)
       end
 

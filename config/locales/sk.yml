@@ -4,6 +4,7 @@ sk:
       refinerycms_photo_gallery:
         title: Fotogaléria
         description: Poskytuje fotogalériu
+        tab_name: Fotogaléria
     photo_gallery:
       albums:
         show:

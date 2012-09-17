@@ -4,6 +4,7 @@ en:
       refinerycms_photo_gallery:
         title: Photo Gallery
         description: Provides advanced photo gallery
+        tab_name: Photo Gallery
     photo_gallery:
       albums:
         show:
