@@ -7,17 +7,14 @@ module Refinery
 
         def sweep_album(album)
           expire_fragment("refinery/photo_gallery/albums/#{album.id}")
-          expire_fragment("refinery/photo_gallery/submenu")
         end
 
         def sweep_album_with_photos(album)
           sweep_album(album)
 
           # only file store supports regexp
-          # TODO DRY
           begin
             # This is slow, but I was unable to get the actual cache folder path.
-            # TODO This should be replaced with FileUtils.rm to get better speed
             expire_fragment( %r{refinery/photo_gallery/albums/#{photo.album_id}/page_\d*})
           rescue NotImplementedError
             Rails.cache.clear

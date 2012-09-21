@@ -4,6 +4,8 @@ module Refinery
       module Pages
         def has_one_page_album
           has_one :album_page, :as => :page
+          has_one :album, :through => :album_page
+
 
           accepts_nested_attributes_for :album_page
 

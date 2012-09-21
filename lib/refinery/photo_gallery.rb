@@ -27,6 +27,6 @@ module Refinery
     require 'refinery/photo_gallery/engine'
     require 'refinery/photo_gallery/configuration'
     require 'refinery/photo_gallery/extensions/pages_extension'
-    require 'refinery/photo_gallery/extensions/pages_helper_extension'
+    require 'refinery/photo_gallery/extensions/pages_controller_extension'
   end
 end

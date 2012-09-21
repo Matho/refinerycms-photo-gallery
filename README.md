@@ -6,21 +6,18 @@ __Photo gallery engine for Refinery CMS.__
 
 This version of refinerycms-photo-gallery supports Rails 3.2.x and Refinery CMS ~> 2.0.3.
 
-Client side image resizing with Plupload is possible on Firefox 3.5+ (with fixed quality) and Chrome.
-Safari doesn't support direct data access to the selected files. Opera 12.00 + supports drag&drop and also client side image resizing.
-
-
 ## Features
 
 * Multiple photo uploading with [Plupload](http://www.plupload.com/) 1.5.4
-* Support for multiple runtimes (because of bug now works only HTML5): HTML5, Flash, Gears, Silverlight, HTML4
+* Currently supported HTML5 runtime, flash implementation is broken
 * Client side photo resizing to do faster uploading on slow connections
 * Server side resizing with Carrierwave
+* Attach album to page. One album can be attached to many pages.
 * Grouping albums to collections. Album can be placed in one or more collections.
-* Ajax photo edit during uploading
+* Ajaxified photo editation during uploading
 * Reading EXIF records from file - GPS latitude/longitude, photo title, photo description (In Linux you can put EXIF data using [digiKam](www.digikam.org/) )
 * Multiple photo editing at once
-* Fully configurable, fully translatable, searchable
+* Fully configurable, searchable
 * Using [Fancybox](http://fancyapps.com/fancybox/) 2.0.6 for frontend image slideshow. Read Fancybox license before you
 use it on profit websites.
 * Fragment caching on frontend
@@ -55,11 +52,10 @@ TODO
 Gem is fully translated to slovak and english. Plupload is translated to 24 languages. You can add your own to
 photo_gallery/app/assets/javascripts/refinery/photo_gallery/admin/plupload/i18n and enable it in config.plupload_locale
 
+## Browser support
+Client side image resizing with Plupload is possible on Firefox 3.5+ (with fixed quality) and Chrome.
+Safari doesn't support direct data access to the selected files. Opera 12.00 + supports drag&drop and also client side image resizing.
 
-## Working status
-
-This is development snapshot. It is not suitable to production now, I'm going to fix bug list and todo list and then I will create stable branch/version.
-But gem works, so if you want, feel free to try it and contribute :).
 
 ## Installation
 
@@ -77,7 +73,7 @@ Instructions for installation you can find under [www.sno.phy.queensu.ca/~phil/e
 Open up your ``Gemfile`` and add at the bottom this line:
 
 ```ruby
-gem 'refinerycms-photo-gallery', '~> 0.0.3.dev', :git => 'git://github.com/Matho/refinerycms-photo-gallery.git'
+gem 'refinerycms-photo-gallery', '~> 0.1.0', :git => 'git://github.com/Matho/refinerycms-photo-gallery.git', :branch=>'2-0-stable'
 ```
 
 Now, run 
