@@ -189,13 +189,12 @@ Remove gem from Gemfile
 
 ## Todo list
 
-* add support for amazon S3 storage
 * create app tests
 * show live links in admin
-* allow to check which photo is photo album preview 
-* set albums public/not public.
+* create pop-up window to upload photos from pages area, like page-images
 * add checkboxes to delete multiple/all photos in album
 * stop uploading
+* add support for amazon S3 storage
 * travis, codeclimate
 
 
@@ -210,8 +209,6 @@ file extensions to upload queue. ( But server side validation reject these files
 ## Road map ?
 
 * GPS editing in degrees,minute,seconds format 
-* album grouping by year (configurable)
-* connect with refinerycms-pages to enable reordering in menu
 * album/photo tags using acts_as_taggable ?
 * show photo location on google maps ?
 
