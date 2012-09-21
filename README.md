@@ -191,7 +191,6 @@ Remove gem from Gemfile
 
 * add support for amazon S3 storage
 * create app tests
-* repair problems with Flash runtime and test gears, silverlight and HTML4 runtime
 * show live links in admin
 * allow to check which photo is photo album preview 
 * set albums public/not public.
