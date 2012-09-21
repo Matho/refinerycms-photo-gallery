@@ -1,0 +1,13 @@
+
+<%= f.fields_for @page.album_page do |album_page_form| %>
+    <%= album_page_form.label :album_id,  t('.join_page_with_album')  %>
+    <%= album_page_form.grouped_collection_select( :album_id, Refinery::PhotoGallery::Collection.includes(:albums).all, :albums, :title, :id, :title,
+                                                   { :include_blank => true},
+                                                   { :data => {
+                                                                :placeholder=> t('.choose_album')},
+                                                                :multiple=> false,
+                                                                :class=> "chzn-select-deselect",
+                                                                :style=>"min-width: 300px;"
+                                                   }) %>
+<% end %>
+

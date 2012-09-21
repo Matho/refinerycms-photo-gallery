@@ -1,21 +1,21 @@
 en:
+  chosen:
+    no_results: "No results matched"
   refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "Join page with album:"
+            choose_album: "Click to choose photo album"
+            flash:
+              connection_destroyed: "Connection between album and page was successfully deleted."
     plugins:
       refinerycms_photo_gallery:
         title: Photo Gallery
         description: Provides advanced photo gallery
         tab_name: Photo Gallery
     photo_gallery:
-      albums:
-        show:
-          no_photos: There are no photos in this album yet
-        photos:
-          image: Image
-      collections:
-        show:
-          no_albums: There are no albums in this collection yet
-        index:
-          no_collections: There are no collections yet
       admin:
         submenu:
           collections:
@@ -28,24 +28,26 @@ en:
             new: Create new album
         collections:
           collection:
-            view_live_html: 'View this collection live <br/><em>(opens in a new window)</em>'
+            view_live_html: View this collection live <br/><em>(opens in a new window)</em>
             delete: Remove this collection forever
             edit: Edit this collection
           index:
-            no_items_yet: 'There are no collections yet. Click "%{create}" to add your first collection.'
+            no_items_yet: There are no collections yet. Click "%{create}" to add your
+              first collection.
           new:
             title: Create new collection
           edit:
             title: Edit collection
         albums:
           album:
-            view_live_html: 'View this album live <br/><em>(opens in a new window)</em>'
+            view_live_html: View this album live <br/><em>(opens in a new window)</em>
             delete: Remove this album forever
             edit: Edit this album
             upload_photos: Upload new photos to album
             edit_photos: Edit photos in album
           index:
-            no_items_yet: 'There are no albums yet. Click "%{create}" to add your first album.'
+            no_items_yet: There are no albums yet. Click "%{create}" to add your first
+              album.
           new:
             title: Create new album
           edit:
@@ -53,7 +55,8 @@ en:
           form:
             album_belongs_to_collection: Album belongs to collection(s)
             more_options: More options
-            more_options_tooltip: Enable edit more fields like adress, latitude, longitude, note
+            more_options_tooltip: Enable edit more fields like adress, latitude, longitude,
+              note
             choose_collection: Choose collection(s)
             path_prefix: Path prefix
             number_of_photos: Contains %{number} photos
@@ -63,19 +66,30 @@ en:
           manage: Manage
           new: Upload new photos
           edit_multiple:
-            no_photos_yet: There are no photos in album yet. Click "%{create} to add your first photos to album.'
+            no_photos_yet: There are no photos in album yet. Click "%{create} to add
+              your first photos to album.'
           photo:
             delete: Remove this photo forever
             deleted: Deleted photo "%{title}"
           form_fields:
             use_decimal_format: Use decimal format
-
-
+      photo_pages:
+        show:
+          other: Other Photo Pages
+      albums:
+        show:
+          no_photos: There are no photos in this album yet
+        photos:
+          image: Image
+      collections:
+        show:
+          no_albums: There are no albums in this collection yet
+        index:
+          no_collections: There are no collections yet
   activerecord:
-    models:
-      refinery/photo_gallery/collection: Collection
-      refinery/photo_gallery/collection: Album
     attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: Page
       refinery/photo_gallery/collection:
         title: Title
         description: Description
@@ -83,15 +97,17 @@ en:
         title: Title
         description: Description
         longitude: Longitude
-        latitude:  Latitude
+        latitude: Latitude
         path: Path
         adress: Adress
         note: Note
         tags: Tags
       refinery/photo_gallery/photo:
-         title: Title
-         description: Description
-         longitude: Longitude
-         latitude:  Latitude
-         path: Path
-         file: File
+        title: Title
+        description: Description
+        longitude: Longitude
+        latitude: Latitude
+        path: Path
+        file: File
+    models:
+      refinery/photo_gallery/collection: Album

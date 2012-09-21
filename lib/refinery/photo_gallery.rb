@@ -6,9 +6,6 @@ module Refinery
   autoload :PhotoGalleryGenerator, 'generators/refinery/photo_gallery_generator'
 
   module PhotoGallery
-    require 'refinery/photo_gallery/engine'
-    require 'refinery/photo_gallery/configuration'
-
     autoload :Version, 'refinery/photo_gallery/version'
 
     class << self
@@ -26,5 +23,10 @@ module Refinery
         @factory_paths ||= [ root.join("spec/factories").to_s ]
       end
     end
+
+    require 'refinery/photo_gallery/engine'
+    require 'refinery/photo_gallery/configuration'
+    require 'refinery/photo_gallery/extensions/pages_extension'
+    require 'refinery/photo_gallery/extensions/pages_helper_extension'
   end
 end

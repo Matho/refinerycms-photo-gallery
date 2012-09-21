@@ -4,6 +4,7 @@ module Refinery
       include Refinery::Engine
 
       isolate_namespace Refinery::PhotoGallery
+      engine_name :refinery_photo_gallery
 
       def self.register(tab)
         tab.name = tab.name = ::I18n.t(:'refinery.plugins.refinerycms_photo_gallery.tab_name')
@@ -20,6 +21,11 @@ module Refinery
         end
       end
 
+      config.to_prepare do
+        require 'refinerycms-pages'
+        Refinery::Page.send :has_one_page_album
+      end
+
       config.before_initialize do
         require 'carrierwave'
         require 'carrierwave/orm/activerecord'
@@ -28,6 +34,7 @@ module Refinery
         require 'mini_exiftool'
       end
 
+
       config.after_initialize do
         Refinery::Pages::Tab.register do |tab|
           register tab
@@ -35,8 +42,6 @@ module Refinery
 
         Refinery.register_engine(Refinery::PhotoGallery)
       end
-
-
     end
   end
 end

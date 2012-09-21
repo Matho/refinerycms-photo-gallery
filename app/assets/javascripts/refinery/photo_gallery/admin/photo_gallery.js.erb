@@ -1,3 +1,5 @@
+<%# encoding: utf-8 %>
+
 $(function() {
     $('form#form_edit_photos').on("click", ".form-photo-field .form-actions-right .confirm-delete", function() {
         if ( confirm( $(this).attr('data-confirm') ) ) {
@@ -23,6 +25,29 @@ $(function() {
         }, 250);
     });
 
-    $(".chzn-select").chosen();
+    $(".chzn-select").chosen(
+            {
+                no_results_text: "<%= I18n.t('chosen.no_results') %>"
+            }
+    );
+
+
+    $(".chzn-select-deselect").chosen({
+                no_results_text: "<%=  I18n.t('chosen.no_results') %>",
+                allow_single_deselect:true}
+    );
+
+
+    $('#photo_gallery_wym_editation').on("click", ".form-actions .button", function() {
+
+        $.ajax({
+            type: "POST",
+            dataType: 'script',
+            data: { '_method': $(this).attr('data-method') },
+            url: this.href
+        });
+
+        return false;
+    });
 
 });

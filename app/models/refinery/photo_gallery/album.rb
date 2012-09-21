@@ -5,6 +5,7 @@ module Refinery
       has_many :collection_albums , :dependent => :destroy
       has_many :collections, :through => :collection_albums
 
+
       before_validation :set_path
       validates :title, :presence => true
       validates :path, :presence => true, :uniqueness => true

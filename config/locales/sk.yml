@@ -1,21 +1,21 @@
 sk:
+  chosen:
+    no_results: "Žiadne výsledky pre zadané kritériá"
   refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "K stránke pripojiť fotoalbum"
+            choose_album: "Kliknite pre výber fotoalbumu"
+            flash:
+              connection_destroyed: "Prepojenie albumu so stránkou bolo zmazané"
     plugins:
       refinerycms_photo_gallery:
         title: Fotogaléria
         description: Poskytuje fotogalériu
         tab_name: Fotogaléria
     photo_gallery:
-      albums:
-        show:
-          no_photos: V albume sa zatiaľ nenachádzajú žiadne fotografie
-        photos:
-          image: Obrázok
-      collections:
-        show:
-          no_albums: V tejto skupine albumov sa zatiať nenachádza žiadny album
-        index:
-          no_collections: Zatiaľ neboli vytvorené žiadne skupiny albumov
       admin:
         submenu:
           collections:
@@ -28,24 +28,27 @@ sk:
             new: Vytvoriť nový albun
         collections:
           collection:
-            view_live_html: 'Pozrieť náhľad skupiny albumov<br/><em>(otvorí sa v novom okne)</em>'
+            view_live_html: Pozrieť náhľad skupiny albumov<br/><em>(otvorí sa v novom
+              okne)</em>
             delete: Zmazať skupinu albumov
             edit: Upraviť skupinu albumov
           index:
-            no_items_yet: 'Zatiaľ neboli vytvorené žiadne skupiny albumov. Klikni  "%{create}" pre vytvorenie prvej.'
+            no_items_yet: Zatiaľ neboli vytvorené žiadne skupiny albumov. Klikni  "%{create}"
+              pre vytvorenie prvej.
           new:
             title: Vytvoriť novú skupinu albumov
           edit:
             title: Upraviť skupinu albumov
         albums:
           album:
-            view_live_html: 'Zobraziť náhľad albumu <br/><em>(otvorí sa v novom okne)</em>'
+            view_live_html: Zobraziť náhľad albumu <br/><em>(otvorí sa v novom okne)</em>
             delete: Zmazať album
             edit: Upraviť album
             upload_photos: Nahrať fotografie do albumu
             edit_photos: Upraviť fotografie v albume
           index:
-            no_items_yet: 'Zatiaľ neboli vytvorené žiadne albumy. Klikni "%{create}" pre vytvorenie prvého.'
+            no_items_yet: Zatiaľ neboli vytvorené žiadne albumy. Klikni "%{create}"
+              pre vytvorenie prvého.
           new:
             title: Vytvoriť nový album
           edit:
@@ -53,28 +56,41 @@ sk:
           form:
             album_belongs_to_collection: Album patrí do skupiny albumov
             more_options: Rozšírené nastavenia
-            more_options_tooltip: Umožní upraviť ďalšie polia ako adresa, zemepisná dĺžka/šírka, poznámka
+            more_options_tooltip: Umožní upraviť ďalšie polia ako adresa, zemepisná
+              dĺžka/šírka, poznámka
             choose_collection: Vyber skupiny albumov
             path_prefix: Prefix priečinka
-            number_of_photos: 'Obsahuje fotografií:  %{number}'
+            number_of_photos: ! 'Obsahuje fotografií:  %{number}'
         photos:
           updated: Fotografie upravené
           title: Fotografie
           manage: Spravovať
           new: Nahrať nové fotografie
           edit_multiple:
-            no_photos_yet: Zatiaľ neboli nahrané žiadne fotografie. Klikni "%{create}" pre pridanie prvých.
+            no_photos_yet: Zatiaľ neboli nahrané žiadne fotografie. Klikni "%{create}"
+              pre pridanie prvých.
           photo:
             delete: Zmazať fotografiu
             deleted: Fotografia "%{title}" zmazaná
           form_fields:
             use_decimal_format: Použi decimálny zápis
-
+      photo_pages:
+        show:
+          other: Daľšie Photo Pages
+      albums:
+        show:
+          no_photos: V albume sa zatiaľ nenachádzajú žiadne fotografie
+        photos:
+          image: Obrázok
+      collections:
+        show:
+          no_albums: V tejto skupine albumov sa zatiať nenachádza žiadny album
+        index:
+          no_collections: Zatiaľ neboli vytvorené žiadne skupiny albumov
   activerecord:
-    models:
-      refinery/photo_gallery/collection: Skupina albumov
-      refinery/photo_gallery/collection: Album
     attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: Page
       refinery/photo_gallery/collection:
         title: Názov
         description: Popis
@@ -82,15 +98,17 @@ sk:
         title: Názov
         description: Popis
         longitude: Zemepisná dĺžka
-        latitude:  Zemepisná šírka
+        latitude: Zemepisná šírka
         path: Názov priečinku
         adress: Adresa
         note: Poznámka
         tags: Tagy
       refinery/photo_gallery/photo:
-         title: Názov
-         description: Popis
-         longitude: Zemepisná dĺžka
-         latitude:  Zemepisná šírka
-         path: Názov priečinku
-         file: Súbor
+        title: Názov
+        description: Popis
+        longitude: Zemepisná dĺžka
+        latitude: Zemepisná šírka
+        path: Názov priečinku
+        file: Súbor
+    models:
+      refinery/photo_gallery/collection: Album

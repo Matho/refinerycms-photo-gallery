@@ -1,4 +1,5 @@
-## 0.0.4.dev [unreleased] 
+## 0.1.0.dev [21 September 2012]
+* added tab to pages, enable join page with photo album
 * added fragment caching for photos on frontend
 * added ajaxified pagination with history.pushState for photos on frontend
 * change the way how albums menu render. Now render whole menu with caching like sitemap. Do hide/show menu branch on your own with javascript. 

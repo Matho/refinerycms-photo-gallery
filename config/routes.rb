@@ -36,4 +36,21 @@ Refinery::Core::Engine.routes.draw do
       end
     end
   end
+
+  # Frontend routes
+  namespace :photo_gallery do
+    resources :photo_pages, :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :photo_gallery, :path => '' do
+    namespace :admin, :path => 'refinery/photo_gallery' do
+      resources :photo_pages, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
+    end
+  end
+
 end
