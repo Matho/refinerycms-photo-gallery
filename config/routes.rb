@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.draw do
 
-  match ":path/page/:page" => "pages#show", :as => :page
-  match ":path" => "pages#show", :as => :page , :page => 1
+  match "*path/page/:page" => "pages#show", :as => :page
+  match "*path" => "pages#show", :as => :page , :page => 1
 
   namespace "photo_gallery", :path => '' do
     namespace :admin, :path => 'refinery' do
