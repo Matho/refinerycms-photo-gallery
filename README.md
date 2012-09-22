@@ -154,6 +154,30 @@ in your app, override it using rake refinery:override command and add this line 
 </script>
 ```
 
+If you want to use Fancybox 1.3, use this javascipt to initialize:
+```javascript
+<script type="text/javascript">
+    $(document).ready(function() {
+        var load_fancybox = function loadFancybox() {
+            $("a[rel=group]").fancybox({
+                'transitionIn'		: 'none',
+                'transitionOut'		: 'none',
+                'titlePosition' 	: 'over',
+                'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                    return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                }
+            });
+        };
+        load_fancybox();
+
+        $("#photo_gallery").on("gallery_loaded", function() {
+            load_fancybox();
+        });
+
+    });
+</script>
+```
+
 Before production, don't forget to precompile assets by:
 
 ```ruby
