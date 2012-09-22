@@ -40,7 +40,7 @@ module Refinery
 
 
         version :album do
-          process :resize_to_fill => Refinery::PhotoGallery.album_dimensions
+          resize_to_fill(Refinery::PhotoGallery.album_dimensions[0], Refinery::PhotoGallery.album_dimensions[1], 'North')
           process :auto_orient
 
           def store_dir
