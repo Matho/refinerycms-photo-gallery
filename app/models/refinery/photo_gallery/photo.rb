@@ -20,8 +20,6 @@ module Refinery
         "#{id}-#{title.parameterize}"
       end
 
-
-
       private
 
       def set_title

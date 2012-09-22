@@ -24,6 +24,7 @@ module Refinery
       config.to_prepare do
         require 'refinerycms-pages'
         Refinery::Page.send :has_one_page_album
+        Refinery::PagesController.send :include, Refinery::PhotoGallery::Extensions::PagesController
       end
 
       config.before_initialize do

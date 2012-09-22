@@ -1,6 +1,6 @@
 <% if @page.album.present? %>
 
-    <% cache "refinery/photo_gallery/albums/#{params[:id]}" do %>
+    <% cache "refinery/photo_gallery/albums/#{@page.album.id}" do %>
         <h2 >
           <%= @page.album.title %>
         </h2>
@@ -10,8 +10,9 @@
         </div>
     <% end %>
 
-
-    <%= render :partial => "/refinery/photo_gallery/albums/photos" %>
+    <div id="photo_gallery">
+      <%= render :partial => "/refinery/photo_gallery/albums/photos" %>
+    </div>
 
 <% end %>
 

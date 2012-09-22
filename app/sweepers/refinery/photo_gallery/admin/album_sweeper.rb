@@ -15,7 +15,7 @@ module Refinery
           # only file store supports regexp
           begin
             # This is slow, but I was unable to get the actual cache folder path.
-            expire_fragment( %r{refinery/photo_gallery/albums/#{photo.album_id}/page_\d*})
+            expire_fragment( %r{refinery/photo_gallery/albums/#{photo.album_id}/page/\d*})
           rescue NotImplementedError
             Rails.cache.clear
             warn "**** [REFINERY PHOTO GALLERY] The cache store you are using is not compatible with this engine. Only file_store is supported. Clearing entire cache instead ***"
