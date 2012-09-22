@@ -8,23 +8,21 @@ module Refinery
 
 
 
-    self.runtimes = 'html5,flash,browserplus,silverlight,gears'
+    #self.runtimes = 'html5,flash,browserplus,silverlight,gears'
+    self.runtimes = 'html5'
     self.max_file_size = '10mb'
-    #TODO or per album?
-    #TODO by default false!
     self.client_side_resize = true
     self.client_side_resize_params = {:width => 950, :height=> 950, :quality=> 100}
-    #TODO leave blank before publishing this gem!
-    self.plupload_locale = ''
+    self.plupload_locale = Refinery::I18n.default_locale.to_s
     self.extension_white_list = %w(jpg jpeg gif png bmp tiff)
     self.photo_gallery_dir = "/system/refinery/photo_gallery"
     self.photo_gallery_dir_relative_to_root = '/public' + self.photo_gallery_dir
     #TODO or per album?
     self.delete_uploaded_file = true
-    self.collection_dimensions = [200, 200]
-    self.album_dimensions = [150, 150]
+    #self.collection_dimensions = [200, 200]
+    self.album_dimensions = [140, 140]
     self.preview_dimensions = [210, 210]
-    self.single_dimensions = [950, 950]
+    self.single_dimensions = [900, 900]
 
     self.albums_per_page = 10
     self.collections_per_page = 10

@@ -1,7 +1,7 @@
 <div id="photo-<%=  photo.id %>" class="form-photo-field">
   <%= fields_for "photos[photo]", photo, :index => photo.id do |p|%>
       <div class="form_photo_left">
-        <%= link_to (image_tag  photo.file.collection.url), photo.file.single.url, {:target=> "_blank"} %>
+        <%= link_to (image_tag  photo.file.preview.url), photo.file.single.url, {:target=> "_blank"} %>
       </div>
 
       <div class="form_photo_right">

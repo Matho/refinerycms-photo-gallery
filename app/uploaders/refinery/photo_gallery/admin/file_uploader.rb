@@ -57,12 +57,14 @@ module Refinery
         #     end
 
         # Create different versions of your uploaded files
+=begin
         version :collection do
           process :resize_to_fill => Refinery::PhotoGallery.collection_dimensions
           def store_dir
             "thumbs/#{model.album.path}"
           end
         end
+=end
         version :album do
           process :resize_to_fill => Refinery::PhotoGallery.album_dimensions
           def store_dir

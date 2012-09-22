@@ -3,9 +3,7 @@
 
     <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/plupload.full.js" -%>
     <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/jquery.plupload.queue.js"  -%>
-    <% if Refinery::PhotoGallery.plupload_locale.present? %>
-        <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/i18n/" + Refinery::PhotoGallery.plupload_locale + ".js"  -%>
-    <% end %>
+    <%= javascript_include_tag "/assets/refinery/photo_gallery/admin/plupload/i18n/" + Refinery::PhotoGallery.plupload_locale.to_s + ".js"  -%>
 
     <script type="text/javascript">
         <% session_key = Rails.application.config.session_options[:key] %>
@@ -30,12 +28,6 @@
                     height : <%= Refinery::PhotoGallery.client_side_resize_params[:height] %>,
                     quality : <%= Refinery::PhotoGallery.client_side_resize_params[:quality] %>},
                 <% end %>
-
-                // Flash settings
-                flash_swf_url : '/assets/refinery/photo_gallery/admin/plupload/plupload.flash.swf',
-
-                // Silverlight settings
-                silverlight_xap_url : '/assets/refinery/photo_gallery/admin/plupload/plupload.silverlight.xap',
 
                 // Post init events, bound after the internal events
                 init : {
@@ -81,7 +73,4 @@
     </div>
 <% end %>
 
-
-
-<br><%#= link_to "Edit uploaded photos", untouched_album_photos_path( @album ) %>
-<br><%#= link_to "Back to #{@album.title}", @album %>
+<br><br>
