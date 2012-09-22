@@ -9,6 +9,8 @@ module Refinery
 
 
             def wrap_show_action
+              params[:page].blank? ? params[:page] = 1 : params[:page]
+
               if request.xhr?
                 respond_to do |format|
                   format.js { render :partial=> "/refinery/photo_gallery/albums/photos"}
