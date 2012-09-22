@@ -27,12 +27,6 @@ module Refinery
           storage :file
         end
 
-=begin
-        #Fix for bug TypeError: can't convert nil into String  #TODO it should work without this method, but don't. Why?
-        def to_s
-          store_dir + '/' + full_filename(original_filename)
-        end
-=end
 
         # Override the directory where uploaded files will be stored
         # This is a sensible default for uploaders that are meant to be mounted:
@@ -44,45 +38,32 @@ module Refinery
           "tmp"
         end
 
-        # Provide a default URL as a default if there hasn't been a file uploaded
-        #     def default_url
-        #       "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-        #     end
 
-        # Process files as they are uploaded.
-        #     process :scale => [200, 300]
-        #
-        #     def scale(width, height)
-        #       # do something
-        #     end
-
-        # Create different versions of your uploaded files
-=begin
-        version :collection do
-          process :resize_to_fill => Refinery::PhotoGallery.collection_dimensions
-          def store_dir
-            "thumbs/#{model.album.path}"
-          end
-        end
-=end
         version :album do
           process :resize_to_fill => Refinery::PhotoGallery.album_dimensions
+          process :auto_orient
+
           def store_dir
             "thumbs/#{model.album.path}"
           end
         end
         version :preview do
           process :resize_to_fit => Refinery::PhotoGallery.preview_dimensions
+          process :auto_orient
           def store_dir
             "thumbs/#{model.album.path}"
           end
         end
         version :single do
+
           process :resize_to_limit => Refinery::PhotoGallery.single_dimensions
+          process :auto_orient
+
           def store_dir
             "thumbs/#{model.album.path}"
           end
         end
+
 
         # Add a white list of extensions which are allowed to be uploaded,
         def extension_white_list
@@ -95,12 +76,20 @@ module Refinery
         #     end
 
 
+        def auto_orient
+          manipulate! do |image|
+            image.auto_orient
+            image
+          end
+        end
+
+
         # Deleting uploaded file in files/ dir. This method dont do removing of original file in tmp
         def delete_uploaded_file(new_file)
-         if version_name.blank? && Refinery::PhotoGallery.delete_uploaded_file
-           filename_to_delete =  File.join(Rails.root.to_s,Refinery::PhotoGallery.photo_gallery_dir_relative_to_root, store_dir, filename )
-           File.delete(filename_to_delete)
-         end
+          if version_name.blank? && Refinery::PhotoGallery.delete_uploaded_file
+            filename_to_delete =  File.join(Rails.root.to_s,Refinery::PhotoGallery.photo_gallery_dir_relative_to_root, store_dir, filename )
+            File.delete(filename_to_delete)
+          end
         end
 
         # store! nil's the cache_id after it finishes so we need to remember it for deletion

@@ -1,8 +1,9 @@
-## 0.1.0.dev [21 September 2012]
-* added tab to pages, enable join page with photo album
+## 0.1.0 [21 September 2012]
+* support for fancybox 1.3 or 2
+* auto photo orientation
+* added admin tab to pages, enable attach photo album to page
 * added fragment caching for photos on frontend
 * added ajaxified pagination with history.pushState for photos on frontend
-* change the way how albums menu render. Now render whole menu with caching like sitemap. Do hide/show menu branch on your own with javascript. 
 * taking filename before uploading as photo title (fixes problems with filenames with diacritic - it took filename after carrierwave preprocessing as photo title - with broken diacritic)
 * fixed backend searching
 
