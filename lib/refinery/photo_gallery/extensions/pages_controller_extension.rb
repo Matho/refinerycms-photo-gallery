@@ -1,3 +1,4 @@
+
 module Refinery
   module PhotoGallery
     module Extensions
@@ -9,6 +10,7 @@ module Refinery
 
 
             def wrap_show_action
+              # this is only for fragment caching to create 1 cache file version for first page
               params[:page].blank? ? params[:page] = 1 : params[:page]
 
               if request.xhr?

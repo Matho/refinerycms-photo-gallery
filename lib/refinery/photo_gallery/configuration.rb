@@ -20,7 +20,7 @@ module Refinery
     #TODO or per album?
     self.delete_uploaded_file = true
     #self.collection_dimensions = [200, 200]
-    self.album_dimensions = [140, 140]
+    self.album_dimensions = [140, 105]
     self.preview_dimensions = [210, 210]
     self.single_dimensions = [900, 900]
 

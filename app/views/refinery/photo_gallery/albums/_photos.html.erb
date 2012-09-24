@@ -1,7 +1,7 @@
 <% cache "refinery/photo_gallery/albums/#{@page.album.id}/page/#{params[:page]}" do %>
 <% photos_for_page = @page.photos_for_page(params[:page])  %>
 
-<%= will_paginate photos_for_page  %>
+<%= will_paginate photos_for_page %>
 
 <ul id="gallery" class="clearfix">
   <% photos_for_page.each_with_index do |photo, index|  %>
@@ -16,5 +16,5 @@
   <% end %>
 </ul>
 
-<%= will_paginate photos_for_page  %>
+    <%= will_paginate photos_for_page %>
 <% end %>
