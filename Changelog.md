@@ -1,4 +1,4 @@
-## 0.1.0 [21 September 2012]
+## 0.1.0 [24 September 2012]
 * drop collection thumbnail version
 * support for old fancybox v1.3
 * auto photo orientation, by default
