@@ -99,7 +99,7 @@ en:
         longitude: Longitude
         latitude: Latitude
         path: Path
-        adress: Adress
+        address: Adress
         note: Note
         tags: Tags
       refinery/photo_gallery/photo:

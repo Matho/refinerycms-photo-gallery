@@ -100,7 +100,7 @@ sk:
         longitude: Zemepisná dĺžka
         latitude: Zemepisná šírka
         path: Názov priečinku
-        adress: Adresa
+        address: Adresa
         note: Poznámka
         tags: Tagy
       refinery/photo_gallery/photo:
