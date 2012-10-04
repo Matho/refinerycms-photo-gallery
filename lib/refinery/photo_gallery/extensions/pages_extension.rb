@@ -3,7 +3,7 @@ module Refinery
     module Extensions
       module Pages
         def has_one_page_album
-          has_one :album_page, :as => :page
+          has_one :album_page, :as => :page, :dependent=> :destroy
           has_one :album, :through => :album_page
           has_many :photos, :class_name => Refinery::PhotoGallery::Photo, :through => :album , :order=> "created_at ASC"
 
