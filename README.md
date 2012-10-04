@@ -99,6 +99,9 @@ Seed your database:
 ```ruby
 rake db:seed
 ```
+Append 
+``<%= render "/refinery/photo_gallery/albums/show" %>`` 
+to pages/show.html.erb to display photos
 
 You can configure gem in ``your_app_name/config/initializers/refinery/photo_gallery.rb``
 
