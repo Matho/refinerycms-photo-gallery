@@ -29,10 +29,14 @@ module Refinery
               if album_page_params[:album_id].blank?
                 self.album_page.destroy
 
+                Refinery::Admin::AlbumPageSweeper.sweep
+
                 # create or update if changed
               elsif self.album_page.album_id.to_s != album_page_params[:album_id]
                 self.album_page.update_attributes( album_page_params)
                 self.album_page.save
+
+                Refinery::Admin::AlbumPageSweeper.sweep
               end
 
 
