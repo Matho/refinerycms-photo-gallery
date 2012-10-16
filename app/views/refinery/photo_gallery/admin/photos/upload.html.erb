@@ -21,7 +21,7 @@
                     'photo[album_id]' : "<%= @album.id %>"
                 },
                 multiple_queues: true,
-
+                rename: true,
 
                 // Resize images on clientside if we can
                 <% if Refinery::PhotoGallery.client_side_resize %>
