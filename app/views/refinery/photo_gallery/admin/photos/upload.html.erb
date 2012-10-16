@@ -20,6 +20,7 @@
                     'authenticity_token' : '<%= form_authenticity_token %>',
                     'photo[album_id]' : "<%= @album.id %>"
                 },
+                multiple_queues: true,
 
 
                 // Resize images on clientside if we can
