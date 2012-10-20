@@ -1,3 +1,9 @@
+## 0.1.1 [20 October 2012]
+* allow to edit filenames in plupload editor before uploading start
+* allow to upload another photos in the same album after uploading is done, without need to do page refresh
+* add dependent destroy to album_page
+* fix ajax pagination in backend
+
 ## 0.1.0 [24 September 2012]
 * drop collection thumbnail version
 * support for old fancybox v1.3
