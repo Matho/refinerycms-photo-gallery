@@ -220,6 +220,8 @@ Remove gem from Gemfile
 * add support for amazon S3 storage
 * travis, codeclimate
 
+## Code
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/Matho/refinerycms-photo-gallery)
 
 ## Known bugs
 
