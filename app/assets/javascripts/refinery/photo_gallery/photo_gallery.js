@@ -3,11 +3,11 @@ if (history && history.pushState) {
         var scrollToPosition = $(target).offset().top;
         console.log(scrollToPosition);
 
-        $('html').animate({ 'scrollTop': scrollToPosition }, 600, function(){
+        $("html,body").animate({ 'scrollTop': scrollToPosition }, 600, function(){
             //window.location.hash = "" + target;
             // This hash change will jump the page to the top of the div with the same id
             // so we need to force the page to back to the end of the animation
-            $('html').animate({ 'scrollTop': scrollToPosition }, 0);
+            $("html,body").animate({ 'scrollTop': scrollToPosition }, 0);
         });
 
     }
