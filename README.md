@@ -25,11 +25,11 @@ use it on profit websites.
 
 ## Screenshots
 
-All screenshots are in folder screenshots
+All screenshots are in branch screenshots
 
-![Photo uploading](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/07_photos%23upload-uploading_2.png)
-![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/11_frontend_show.png)
-![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/master/screenshots/12_show_photo_using_fancybox.png)
+![Photo uploading](https://raw.github.com/Matho/refinerycms-photo-gallery/screenshots/screenshots/07_photos%23upload-uploading_2.png)
+![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/screenshots/screenshots/11_frontend_show.png)
+![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/screenshots/screenshots/12_show_photo_using_fancybox.png)
 
 
 ## Demo
