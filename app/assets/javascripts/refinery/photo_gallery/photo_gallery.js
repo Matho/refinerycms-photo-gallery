@@ -1,7 +1,7 @@
 if (history && history.pushState) {
     function slide_to(target){
         var scrollToPosition = $(target).offset().top;
-        console.log(scrollToPosition);
+
 
         $("html,body").animate({ 'scrollTop': scrollToPosition }, 600, function(){
             //window.location.hash = "" + target;
@@ -13,7 +13,6 @@ if (history && history.pushState) {
     }
 
     $(document).ready(function(){
-
         $('#photo_gallery').on("click", ".pagination a[href]", function() {
             slide_to($('#photo_gallery'));
             $.getScript(this.href);

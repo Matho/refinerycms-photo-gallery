@@ -1,4 +1,3 @@
-
 module Refinery
   module PhotoGallery
     module Extensions
@@ -6,10 +5,10 @@ module Refinery
 
         def self.included(base)
           base.class_eval do
-            around_filter :wrap_show_action, :only => :show
+            before_filter :ajax_photo_gallery, :only => :show
 
 
-            def wrap_show_action
+            def ajax_photo_gallery
               # this is only for fragment caching to create 1 cache file version for first page
               params[:page].blank? ? params[:page] = 1 : params[:page]
 
@@ -17,8 +16,6 @@ module Refinery
                 respond_to do |format|
                   format.js { render :partial=> "/refinery/photo_gallery/albums/photos"}
                 end
-              else
-                show
               end
             end
 
