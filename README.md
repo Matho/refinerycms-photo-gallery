@@ -9,7 +9,7 @@ This version of refinerycms-photo-gallery supports Rails 3.2.x and Refinery CMS 
 ## Features
 
 * Multiple photo uploading with [Plupload](http://www.plupload.com/) 1.5.4
-* Currently supported HTML5 runtime, flash implementation is broken
+* Only HTML5 runtime is supported
 * Client side photo resizing to do faster uploading on slow connections
 * Server side resizing with Carrierwave
 * Attach album to page. One album can be attached to many pages.
@@ -225,7 +225,6 @@ Remove gem from Gemfile
 
 ## Known bugs
 
-* Only html5 runtime is now supported
 * Files with spaces in file names are rejected if you upload them using drag&drop
 * After collection is created, you are redirected to albums#index instead of collection#index
 * Due to Opera bug I turn off Plupload client side mime type validation. It is able to choose files with non valid
