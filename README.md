@@ -226,7 +226,6 @@ Remove gem from Gemfile
 ## Known bugs
 
 * Files with spaces in file names are rejected if you upload them using drag&drop
-* After collection is created, you are redirected to albums#index instead of collection#index
 * Due to Opera bug I turn off Plupload client side mime type validation. It is able to choose files with non valid
 file extensions to upload queue. ( But server side validation reject these files.).
 
