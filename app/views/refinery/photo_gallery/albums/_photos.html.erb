@@ -6,7 +6,7 @@
 <ul id="gallery" class="clearfix">
   <% photos_for_page.each_with_index do |photo, index|  %>
       <li>
-        <%= link_to (image_tag  photo.file.url(:album), :width => Refinery::PhotoGallery.album_dimensions[0], :height => Refinery::PhotoGallery.album_dimensions[1]  ), photo.file.single.url, {
+        <%= link_to (image_tag  photo.file.url(:album), :width => Refinery::PhotoGallery.album_dimensions[0], :height => Refinery::PhotoGallery.album_dimensions[1]  ), photo.link_url, {
                 :target=> "_blank",
                 :class=>"fancybox",
                 :data =>{:title=> t('.image') + ' ' + (index + 1 ).to_s + '/' + photos_for_page.total_pages.to_s + ' ' + photo.title + '<br/><br/>' + photo.description},
