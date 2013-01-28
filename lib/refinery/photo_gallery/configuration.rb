@@ -4,7 +4,9 @@ module Refinery
 
     config_accessor :runtimes, :max_file_size,:client_side_resize, :client_side_resize_params, :plupload_locale, :extension_white_list,:photo_gallery_dir,
                     :delete_uploaded_file,:collection_dimensions, :album_dimensions, :preview_dimensions, :single_dimensions, :photo_gallery_dir_relative_to_root,
-                    :photos_per_page, :albums_per_page, :collections_per_page
+                    :photos_per_page, :albums_per_page, :collections_per_page,
+                    :admin_options_show_url, :admin_options_show_css_class,
+                    :admin_options_show_preview_type
 
 
 
@@ -27,5 +29,9 @@ module Refinery
     self.albums_per_page = 10
     self.collections_per_page = 10
     self.photos_per_page = 10
+
+    self.admin_options_show_url = true
+    self.admin_options_show_css_class = true
+    self.admin_options_show_preview_type = true
   end
 end
