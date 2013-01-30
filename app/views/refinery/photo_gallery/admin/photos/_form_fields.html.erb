@@ -15,21 +15,21 @@
           <%= p.text_area :description, :rows => "5", :cols=> "57" %>
         </div>
 
-        <% if Refinery::PhotoGallery.admin_options_show_url %>
+        <% if Refinery::PhotoGallery.admin_photo_options_show_url %>
             <div class='field'>
               <%= p.label :url %>
               <%= p.text_field :url, :class => "larger" %>
             </div>
         <% end %>
 
-        <% if Refinery::PhotoGallery.admin_options_show_css_class %>
+        <% if Refinery::PhotoGallery.admin_photo_options_show_css_class %>
             <div class='field'>
               <%= p.label :css_class %>
               <%= p.text_field :css_class, :class => "larger" %>
             </div>
         <% end %>
 
-        <% if Refinery::PhotoGallery.admin_options_show_preview_type %>
+        <% if Refinery::PhotoGallery.admin_photo_options_show_preview_type %>
             <div class='field'>
               <%= p.label :preview_type %>
               <%= p.text_field :preview_type, :class => "larger" %>
