@@ -2,8 +2,8 @@ module Refinery
   module PhotoGallery
     class Version
       @major = 0
-      @minor = 1
-      @tiny  = '2'
+      @minor = 2
+      @tiny  = '0.dev'
 
       class << self
         attr_reader :major, :minor, :tiny
