@@ -15,6 +15,11 @@
           <%= p.text_area :description, :rows => "5", :cols=> "57" %>
         </div>
 
+        <div class='field'>
+          <%= p.label :url %>
+          <%= p.text_field :url, :class => "larger" %>
+        </div>
+
         <div class='field-group'>
             <%= p.label :longitude, :tooltip=> t('.use_decimal_format') %>
             <%= p.text_field :longitude, :size=> 13 %>
