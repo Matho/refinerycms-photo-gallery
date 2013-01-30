@@ -47,6 +47,7 @@ module Refinery
             "thumbs/#{model.album.path}"
           end
         end
+
         version :preview do
           process :resize_to_fit => Refinery::PhotoGallery.preview_dimensions
           process :auto_orient
@@ -54,8 +55,8 @@ module Refinery
             "thumbs/#{model.album.path}"
           end
         end
-        version :single do
 
+        version :single do
           process :resize_to_limit => Refinery::PhotoGallery.single_dimensions
           process :auto_orient
 
@@ -64,6 +65,11 @@ module Refinery
           end
         end
 
+        version :error_wrong_preview_version do
+          def store_dir
+            "error/wrong_preview_version.png"
+          end
+        end
 
         # Add a white list of extensions which are allowed to be uploaded,
         def extension_white_list
