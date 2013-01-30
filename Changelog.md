@@ -1,3 +1,7 @@
+## 0.1.2 [31 January 2013]
+* fix issue #3 by changing around_filter to before_filter. 
+* fix issue #2 slide_to JS function don't work in Chrome
+
 ## 0.1.1 [20 October 2012]
 * allow to edit filenames in plupload editor before uploading start
 * allow to upload another photos in the same album after uploading is done, without need to do page refresh
