@@ -1,3 +1,7 @@
+## 0.2.0 [unreleased]
+* add css_class and preview_type field [jak4]
+* add url field for photo model [jak4]
+
 ## 0.1.2 [31 January 2013]
 * fix issue #3 by changing around_filter to before_filter. 
 * fix issue #2 slide_to JS function don't work in Chrome
