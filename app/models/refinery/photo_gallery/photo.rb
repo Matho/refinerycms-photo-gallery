@@ -5,7 +5,7 @@ module Refinery
 
       mount_uploader :file, Refinery::PhotoGallery::Admin::FileUploader
       acts_as_indexed :fields => [:title, :description]
-      attr_accessible :album_id, :title, :description, :longitude, :latitude, :url
+      attr_accessible :album_id, :title, :description, :longitude, :latitude, :url, :css_class, :preview_type
       validates :title, :presence => true
       #TODO validate latitude/longitude - convert from nondecimal to decimal using inspiration from https://github.com/airblade/geo_tools/tree/master/lib/geo_tools
 
@@ -22,6 +22,15 @@ module Refinery
 
       def link_url
         self.url.blank? ? file.single.url : self.url
+      end
+
+      def preview_link(ext_type = :album)
+        begin
+          type = self.preview_type.blank? ? ext_type : self.preview_type
+          file.url(type)
+        rescue Exception => e
+          file.url(:error_wrong_preview_version)
+        end
       end
 
       private
