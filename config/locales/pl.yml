@@ -1,0 +1,110 @@
+pl:
+  chosen:
+    no_results: "Brak wyników"
+  refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "Połącz stronę z albumem:"
+            choose_album: "Kliknij, aby dodać album"
+            flash:
+              connection_destroyed: "Połączenie pomiędzy stroną i albumem zostało usunięte"
+    plugins:
+      refinerycms_photo_gallery:
+        title: Galeria zdjęć
+        description: Zaawansowana galeria zdjęć
+        tab_name: Galeria zdjęć
+    photo_gallery:
+      admin:
+        submenu:
+          collections:
+            title: Kolekcje
+            manage: Przeglądaj
+            new: Dodaj nową kolekcję
+          albums:
+            title: Albumy
+            manage: Przeglądaj
+            new: Dodaj nowy album
+        collections:
+          collection:
+            view_live_html: Podgląd kolekcji <br/><em>(w nowym oknie)</em>
+            delete: Usuń tę kolekcję na zawsze
+            edit: Edytuj tę kolekcję
+          index:
+            no_items_yet: Nie ma jeszcze żadnych kolekcji. Kliknij "%{create}" aby dodać pierwszą kolekcję.
+          new:
+            title: Dodaj nową kolekcję
+          edit:
+            title: Edytuj kolekcję
+        albums:
+          album:
+            view_live_html: Podgląd albumu <br/><em>(w nowym oknie)</em>
+            delete: Usuń ten album na zawsze
+            edit: Edytuj ten album
+            upload_photos: Załaduj nowe zdjęcia do albumu
+            edit_photos: Edytuj zdjęcia w albumie
+          index:
+            no_items_yet: Nie ma jeszcze żadnych albumów. Kliknij "%{create}" aby dodać pierwszy album.
+          new:
+            title: Dodaj nowy album
+          edit:
+            title: Edytuj album
+          form:
+            album_belongs_to_collection: Album należy do kolekcji
+            more_options: Więcej opcji
+            more_options_tooltip: Włącz edycję dodakowych pól, takich jak adres, długość i szerokość geograficzna
+            choose_collection: Wybierz kolekcję/e
+            path_prefix: Prefix
+            number_of_photos: Zawiera %{number} zdjęć
+        photos:
+          updated: Zaktualizowane zdjęcia
+          title: Zdjęcia
+          manage: Przeglądaj
+          new: Załaduj nowe zdjęcia
+          edit_multiple:
+            no_photos_yet: Nie ma jeszcze zdjęć w tym albumie. Kliknij "%{create} aby dodać pierwsze zdjęcia.
+          photo:
+            delete: Usuń to zdjęcie na zawsze
+            deleted: Usunięto zdjęcie "%{title}"
+          form_fields:
+            use_decimal_format: Użyj formatu dziesiętnego
+      photo_pages:
+        show:
+          other: Inne strony
+      albums:
+        show:
+          no_photos: Nie ma jeszcze zdjęć w tym albumie
+        photos:
+          image: Obrazek
+      collections:
+        show:
+          no_albums: Nie ma jeszcze albumów w tej kolekcji
+        index:
+          no_collections: Nie ma jeszcze żadnej kolekcji
+  activerecord:
+    attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: Strona
+      refinery/photo_gallery/collection:
+        title: Tytuł
+        description: Opis
+      refinery/photo_gallery/album:
+        title: Tytuł
+        description: Opis
+        longitude: Długość geograficzna
+        latitude: Szerokość geograficzna
+        path: Ścieżka
+        address: Adres
+        note: Notatka
+        tags: Tagi
+      refinery/photo_gallery/photo:
+        title: Tytuł
+        description: Opis
+        longitude: Długość geograficzna
+        latitude: Szerokość geograficzna
+        path: Ścieżka
+        file: Plik
+    models:
+      refinery/photo_gallery/collection: Album
+
