@@ -4,7 +4,9 @@ __Photo gallery engine for Refinery CMS.__
 
 ## Requirements
 
-This version of refinerycms-photo-gallery supports Rails 3.2.x and Refinery CMS ~> 2.0.3.
+Currently unreleased version 0.2.x in master branch supports Rails 4.2.x and Refinery CMS ~> 3.0.0
+
+Previous versions of refinerycms-photo-gallery supports Rails 3.2.x and Refinery CMS ~> 2.0.3.
 
 ## Features
 
@@ -32,10 +34,6 @@ All screenshots are in branch screenshots
 ![Frontend album](https://raw.github.com/Matho/refinerycms-photo-gallery/screenshots/screenshots/12_show_photo_using_fancybox.png)
 
 
-## Demo
-
-TODO
-
 ## Options
 
 * choose runtimes
@@ -57,7 +55,7 @@ Client side image resizing with Plupload is possible on Firefox 3.5+ (with fixed
 Safari doesn't support direct data access to the selected files. Opera 12.00 + supports drag&drop and also client side image resizing.
 
 
-## Installation
+## Installation for ~> 0.2.0
 
 Make sure, you [have installed ImageMagick](http://www.imagemagick.org/script/install-source.php#unix) and ImageMagick dev.
 On Ubuntu 12.04 you can install dev suite with commands:
@@ -71,7 +69,12 @@ Instructions for installation you can find under [www.sno.phy.queensu.ca/~phil/e
 
 
 Open up your ``Gemfile`` and add at the bottom this line:
+-for edge version:
+```ruby
+gem 'refinerycms-photo-gallery', '~> 0.2.0', :github=>"Matho/refinerycms-photo-gallery", :branch=>"master"
+```
 
+-for latest stable version
 ```ruby
 gem 'refinerycms-photo-gallery', '~> 0.1.0'
 ```
@@ -99,9 +102,49 @@ Seed your database:
 ```ruby
 rake db:seed
 ```
-Append 
-``<%= render "/refinery/photo_gallery/albums/show" %>`` 
-to pages/show.html.erb to display photos
+
+Override pages/show.html file using
+```ruby
+rake refinery:override view=pages/show.html.erb
+```
+and at the bottom of file append:
+```ruby
+<%= render "/refinery/photo_gallery/albums/show" %>
+```
+It will ensure album photos will be shown. Change it according your needs. 
+
+
+You have to change list of custom manifest files in your ror app. Copy following values to your app's config/initializers/asset.rb file: 
+```ruby
+Rails.application.config.assets.precompile += [
+"refinery/photo_gallery/admin/photo_gallery.css",
+"refinery/photo_gallery/admin/chosen.css",
+"refinery/photo_gallery/admin/icons/loading.gif",
+"refinery/photo_gallery/admin/photo_gallery.js"
+]
+```
+
+Then you need to override PagesController in admin namespace. In your terminal run:
+```ruby
+rake refinery:override controller=admin/pages_controller
+```
+Then open this overriden file in your app's folder - app/controllers/refinery/admin/pages_controller.rb Look for permitted_page_params method and add check for another attribute:
+```ruby
+album_page: [:album_id]
+```
+
+It should look like: 
+```ruby
+def permitted_page_params
+    [
+      :browser_title, :draft, :link_url, :menu_title, :meta_description,
+      :parent_id, :skip_to_first_child, :show_in_menu, :title, :view_template,
+      :layout_template, :custom_slug, parts_attributes: [:id, :title, :slug, :body, :position], album_page: [:album_id]
+    ]
+end
+```
+
+## Configurations && Fancybox installation
 
 You can configure gem in ``your_app_name/config/initializers/refinery/photo_gallery.rb``
 
@@ -109,7 +152,7 @@ If you want to use ajaxy pagination, copy ``app/assets/javascripts/refinery/phot
 
 Check, if you have ``jquery.js`` included in your backend.
 
-If you want to use Fancybox in frontend, copy ``photo_gallery/app/assets/images/refinery/photo_gallery/fancybox``, ``photo_gallery/app/assets/javascripts/refinery/photo_gallery/fancybox``, ``photo_gallery/app/assets/refinery/photo_gallery/stylesheets/fancybox`` to your
+If you want to use Fancybox on frontend, copy ``photo_gallery/app/assets/images/refinery/photo_gallery/fancybox``, ``photo_gallery/app/assets/javascripts/refinery/photo_gallery/fancybox``, ``photo_gallery/app/assets/refinery/photo_gallery/stylesheets/fancybox`` to your
 refinery cms assets directory.
 
 Then you need to add fancybox js files to your js manifest file in ``your_app_name/app/javascripts/application.js``:

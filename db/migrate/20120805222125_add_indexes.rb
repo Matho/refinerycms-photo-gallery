@@ -5,8 +5,8 @@ class AddIndexes < ActiveRecord::Migration
     add_index Refinery::PhotoGallery::Photo.table_name, :id, :unique => true
 
 
-    add_index Refinery::PhotoGallery::CollectionAlbum.table_name, :collection_id
-    add_index Refinery::PhotoGallery::CollectionAlbum.table_name, :album_id
+    add_index Refinery::PhotoGallery::CollectionAlbum.table_name, :collection_id, :name=>"index_rpg_collection_albums_on_collection_id"
+    add_index Refinery::PhotoGallery::CollectionAlbum.table_name, :album_id, :name=>"index_rpg_collection_albums_on_album_id"
     add_index Refinery::PhotoGallery::Photo.table_name, :album_id
   end
 

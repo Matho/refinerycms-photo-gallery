@@ -1,53 +1,53 @@
 <%# encoding: utf-8 %>
 
 $(function() {
-    $('form#form_edit_photos').on("click", ".form-photo-field .form-actions-right .confirm-delete", function() {
-        if ( confirm( $(this).attr('data-confirm') ) ) {
-            $.ajax({
-                type: "POST",
-                dataType: 'script',
-                data: { '_method': 'delete' },
-                url: this.href
-            });
-        }
+  $('form#form_edit_photos').on("click", ".form-photo-field .form-actions-right .confirm-delete", function() {
+    if ( confirm( $(this).attr('data-confirm') ) ) {
+      $.ajax({
+        type: "POST",
+        dataType: 'script',
+        data: { '_method': 'delete' },
+        url: this.href
+      });
+    }
 
-        //TODO if all fields are deleted, show info - 0 photos and dont show form actions
+    //TODO if all fields are deleted, show info - 0 photos and dont show form actions
 
-        return false;
+    return false;
+  });
+
+  $('#more_photo_options_field #toggle_advanced_options').click(function(e){
+    e.preventDefault();
+    $('#more_options').animate({opacity: 'toggle', height: 'toggle'}, 250);
+
+    $('html,body').animate({
+      scrollTop: $('#toggle_advanced_options').parent().offset().top
+    }, 250);
+  });
+
+  $(".chzn-select").chosen(
+      {
+        no_results_text: "<%= I18n.t('chosen.no_results') %>"
+      }
+  );
+
+
+  $(".chzn-select-deselect").chosen({
+    no_results_text: "<%=  I18n.t('chosen.no_results') %>",
+    allow_single_deselect:true}
+  );
+
+
+  $('#photo_gallery_wym_editation').on("click", ".form-actions .button", function() {
+
+    $.ajax({
+      type: "POST",
+      dataType: 'script',
+      data: { '_method': $(this).attr('data-method') },
+      url: this.href
     });
 
-    $('#more_photo_options_field #toggle_advanced_options').click(function(e){
-        e.preventDefault();
-        $('#more_options').animate({opacity: 'toggle', height: 'toggle'}, 250);
-
-        $('html,body').animate({
-            scrollTop: $('#toggle_advanced_options').parent().offset().top
-        }, 250);
-    });
-
-    $(".chzn-select").chosen(
-            {
-                no_results_text: "<%= I18n.t('chosen.no_results') %>"
-            }
-    );
-
-
-    $(".chzn-select-deselect").chosen({
-                no_results_text: "<%=  I18n.t('chosen.no_results') %>",
-                allow_single_deselect:true}
-    );
-
-
-    $('#photo_gallery_wym_editation').on("click", ".form-actions .button", function() {
-
-        $.ajax({
-            type: "POST",
-            dataType: 'script',
-            data: { '_method': $(this).attr('data-method') },
-            url: this.href
-        });
-
-        return false;
-    });
+    return false;
+  });
 
 });

@@ -1,10 +1,13 @@
 module Refinery
   class PhotoGalleryGenerator < Rails::Generators::Base
+
     source_root File.expand_path('../templates', __FILE__)
 
-    def generate_inquiries_initializer
+
+    def generate_photo_gallery_initializer
       template 'config/initializers/refinery/photo_gallery.rb.erb', File.join(destination_root, 'config', 'initializers', 'refinery', 'photo_gallery.rb')
     end
+
 
     def rake_db
       rake("refinery_photo_gallery:install:migrations")

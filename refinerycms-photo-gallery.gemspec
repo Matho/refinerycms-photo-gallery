@@ -18,13 +18,12 @@ Gem::Specification.new do |s|
   s.test_files        = `git ls-files -- spec/*`.split("\n")
 
   # Runtime dependencies
-  s.add_dependency    'refinerycms-core',     '~> 2.0.3'
-  s.add_dependency   'refinerycms-settings', '~> 2.0.1'
+  s.add_dependency    'refinerycms-core',     '~> 3.0.0'
   s.add_dependency    'mime-types'
   s.add_dependency    'carrierwave', '0.6.2'
   s.add_dependency    'mini_magick'
   s.add_dependency    'mini_exiftool'
 
   # Development dependencies
-  s.add_development_dependency 'refinerycms-testing', '~> 2.0.0'
+  s.add_development_dependency 'refinerycms-testing', '~> 3.0.0'
 end

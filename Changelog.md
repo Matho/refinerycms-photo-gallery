@@ -1,6 +1,13 @@
 ## 0.2.0 [unreleased]
+* introduce support for Rails 4.2 and Refinery 3.0
+* introduce Strong Parameters protection instead of attr_*
+* change Plupload version from 1.5.9 to 2.1.9 due to JQuery incompatibilities
+* remove sweepers and observers (caching functionality)
 * add css_class and preview_type field [jak4]
 * add url field for photo model [jak4]
+* added polish locale [szajbus]
+* add custom url & css class [QEDio]
+
 
 ## 0.1.2 [31 January 2013]
 * fix issue #3 by changing around_filter to before_filter. 

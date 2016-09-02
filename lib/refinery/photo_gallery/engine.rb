@@ -17,7 +17,6 @@ module Refinery
           plugin.name = "refinerycms_photo_gallery"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.photo_gallery_admin_albums_path }
           plugin.menu_match =  %r{refinery/photo_gallery(/.+?)?$}
-          plugin.activity = { :class_name => 'Refinery::PhotoGallery::Album' }
         end
       end
 

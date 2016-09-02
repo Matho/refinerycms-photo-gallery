@@ -5,7 +5,6 @@ module Refinery
       belongs_to :page, :polymorphic => true
 
 
-      attr_accessible :page_id, :page_type, :album_id
 
     end
 end

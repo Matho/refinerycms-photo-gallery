@@ -11,10 +11,9 @@
       <%= f.text_field :title, {:class => 'larger widest'} %><br />
     </div>
 
-    <%# TODO  use pop up to create collection %>
     <div class='field'>
       <%= label :collection, t('.album_belongs_to_collection')   %>
-      <%= collection_select(:album, :collection_ids, Refinery::PhotoGallery::Collection.all(:order=> "title ASC"), :id, :title,
+      <%= collection_select(:album, :collection_ids, Refinery::PhotoGallery::Collection.all.order("title ASC"), :id, :title,
                             { },
                             { :data => {:placeholder=> t('.choose_collection')}, :multiple=> true, :class=> "chzn-select", :style=>"width:400px;"}) %>
     </div>

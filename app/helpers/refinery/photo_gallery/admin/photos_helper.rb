@@ -4,7 +4,11 @@ module Refinery
       module PhotosHelper
 
         def get_filename_part(filename)
-          filename[0, filename.rindex('.') ]
+          if filename.present?
+            filename[0, filename.rindex('.') ]
+          else
+            ""
+          end
         end
       end
     end

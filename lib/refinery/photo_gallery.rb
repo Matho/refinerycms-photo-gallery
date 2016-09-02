@@ -1,5 +1,4 @@
 require 'refinerycms-core'
-require 'refinerycms-settings'
 
 
 module Refinery

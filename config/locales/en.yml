@@ -20,11 +20,11 @@ en:
         submenu:
           collections:
             title: Collections
-            manage: Manage
+            manage: Manage Collections
             new: Create new collection
           albums:
             title: Albums
-            manage: Manage
+            manage: Manage Albums
             new: Create new album
         collections:
           collection:

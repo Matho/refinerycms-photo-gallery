@@ -5,8 +5,6 @@ module Refinery
     module Admin
       class PhotosController < ::Refinery::AdminController
         include PhotosHelper
-        helper :"refinery/photo_gallery/admin/photos"
-        cache_sweeper PhotoSweeper
 
         #TODO delete update method from routes
         #TODO delete edit action from routes
@@ -14,11 +12,11 @@ module Refinery
         #TODO after destroying album, delete empty folders
 
         def upload
-          @album = Album.find( params[:album_id])
+          @album = Album.find( params[:album_id].to_i)
         end
 
         def create
-          @photo = Photo.new(params[:photo])
+          @photo = Photo.new(new_photo_params)
           @photo.file = params[:file]
           @photo.title = get_filename_part(params[:name])
 
@@ -30,17 +28,17 @@ module Refinery
         end
 
         def edit_multiple
-          @album = Album.find( params[:album_id] )
+          @album = Album.find( params[:album_id].to_i )
           @photos = @album.photos.order("created_at DESC")
         end
 
 
         def update_multiple
-          photo_ids = params[:photos][:photo].map{ |key, hash| key }
+          photo_ids = update_multiple_photo_params["photo"].map{ |key, hash| key }
 
           @photos = Photo.find(photo_ids)
           @photos.each do |photo|
-            photo.update_attributes(params[:photos][:photo][photo.id.to_s]) #TODO use ! method and validate exceptions
+            photo.update_attributes(update_multiple_photo_params["photo"][photo.id.to_s]) #TODO use ! method and validate exceptions
           end
 
           flash[:notice] = t('updated', :scope=> 'refinery.photo_gallery.admin.photos')
@@ -49,7 +47,7 @@ module Refinery
 
 
         def destroy
-          @photo = Photo.find( params[:id])
+          @photo = Photo.find( params[:id].to_i)
 
           if @photo.destroy
             respond_to do |format|
@@ -62,7 +60,17 @@ module Refinery
           end
         end
 
+        protected
 
+        def update_multiple_photo_params
+          params.require(:photos).permit(:photo => [ :id, :title, :description, :url, :css_class, :preview_type, :longitude, :latitude ] )
+        end
+
+        def photo_params
+          params.require(:photo).permit(:album_id, :title, :description, :longitude, :latitude, :url, :css_class, :preview_type)
+        end
+
+        alias_method :new_photo_params, :photo_params
       end
     end
   end

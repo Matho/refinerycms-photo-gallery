@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gemspec
 
-gem 'refinerycms', '~> 2.0.3'
+gem 'refinerycms', '~> 3.0.0'
 
 #loading from gemspec
 

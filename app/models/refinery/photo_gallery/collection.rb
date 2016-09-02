@@ -6,7 +6,6 @@ module Refinery
 
       #TODO Allow to remove collection only if no album belongs to it
 
-      attr_accessible :title, :description
 
       validates :title, :presence => true
       acts_as_indexed :fields => [:title, :description]
