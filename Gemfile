@@ -17,6 +17,7 @@ group :test do
   gem 'pry'
   gem 'launchy'
   gem 'poltergeist'
+  gem 'capybara-screenshot'
 end
 
 # Database Configuration
