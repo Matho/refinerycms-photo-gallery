@@ -51,6 +51,9 @@ module Refinery
 
           if @photo.destroy
             respond_to do |format|
+              format.html {
+                redirect_to refinery.photo_gallery_admin_albums_path
+              }
               format.js {
                 render :partial=> "destroy", :locals => {:photo => @photo}
               }

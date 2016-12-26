@@ -253,9 +253,16 @@ Remove fancybox init javascript from _javascripts.html.erb file
 
 Remove gem from Gemfile
 
+## Testing
+* cd to this engine path
+* bundle install
+* rake refinery:testing:dummy_app
+* rake spec
+* Probably you will need to set some asset manifest to dummy's app manifest - see console output for errors
+
+
 ## Todo list
 
-* create app tests
 * show live links in admin
 * create pop-up window to upload photos from pages area, like page-images
 * add checkboxes to delete multiple/all photos in album
@@ -278,9 +285,9 @@ file extensions to upload queue. ( But server side validation reject these files
 * album/photo tags using acts_as_taggable ?
 * show photo location on google maps ?
 
-## Testing
 
-TODO
+
+
 
 ## License
 

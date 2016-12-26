@@ -56,20 +56,6 @@ module Refinery
       end
 
 
-=begin
-      #TODO add checkbox to check if it should be writed to exif, globally on/off writing
-      def exif_write
-        # should only write if tags are changed as images can be large and thus ExifTool will take a while to write to the file
-        photo = MiniExiftool.new(self.file.file.file)
-        photo.GPSLongitude = self.longitude
-        photo.GPSLatitude = self.latitude
-        photo.DocumentName = self.title
-        photo.ImageDescription = self.description
-        photo.Keywords = self.tags
-        photo.save
-      end
-=end
-
     end
   end
 end
