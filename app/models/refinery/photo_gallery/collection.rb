@@ -8,7 +8,6 @@ module Refinery
 
 
       validates :title, :presence => true
-      acts_as_indexed :fields => [:title, :description]
 
       self.per_page = Refinery::PhotoGallery.collections_per_page
 

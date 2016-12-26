@@ -4,7 +4,7 @@ module Refinery
       belongs_to :album
 
       mount_uploader :file, Refinery::PhotoGallery::Admin::FileUploader
-      acts_as_indexed :fields => [:title, :description]
+
       validates :title, :presence => true
       #TODO validate latitude/longitude - convert from nondecimal to decimal using inspiration from https://github.com/airblade/geo_tools/tree/master/lib/geo_tools
 

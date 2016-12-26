@@ -11,7 +11,6 @@ module Refinery
       validates :path, :presence => true, :uniqueness => true
 
       attr_accessor :path_prefix
-      acts_as_indexed :fields => [:title, :description]
 
       self.per_page = Refinery::PhotoGallery.albums_per_page
 

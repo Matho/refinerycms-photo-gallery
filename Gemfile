@@ -1,26 +1,43 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
+
+gem "refinerycms-authentication-devise", '~> 1.0.4'
 
 gemspec
 
-gem 'refinerycms', '~> 3.0.0'
+gem 'refinerycms', '~> 3.0.5'
 
-#loading from gemspec
+group :development, :test do
+  gem 'refinerycms-testing', '~> 3.0.5'
+end
 
-# -- Cloud storage
-# AWS S3 support. Can be disabled if using local file system instead of cloud storage.
-#gem 'fog'
+# Add the default visual editor, for now.
+gem 'refinerycms-wymeditor', ['~> 1.0', '>= 1.0.6']
 
-# -- Photo resizing
-# MiniMagick
-#gem "mini_magick"
+group :test do
+  gem 'pry'
+  gem 'launchy'
+  gem 'poltergeist'
+end
 
-# RMagick:
-#gem "rmagick", :require => 'RMagick'
+# Database Configuration
+unless ENV['TRAVIS']
+  gem 'activerecord-jdbcsqlite3-adapter', :platform => :jruby
+  gem 'sqlite3', :platform => :ruby
+end
 
-# FreeImage:
-#gem "RubyInline"
-#gem "image_science", :git => 'git://github.com/perezd/image_science.git'
 
-# -- EXIF
-# Mini exif tool. Can be disabled. Remove exif_read and exif_write filters in photo model
-#gem "mini_exiftool"
+if !ENV['TRAVIS'] || ENV['DB'] == 'postgresql'
+  gem 'activerecord-jdbcpostgresql-adapter', :platform => :jruby
+  gem 'pg', :platform => :ruby
+end
+
+# Refinery/rails should pull in the proper versions of these
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+end
+
+# Load local gems according to Refinery developer preference.
+if File.exist? local_gemfile = File.expand_path('../.gemfile', __FILE__)
+  eval File.read(local_gemfile)
+end
