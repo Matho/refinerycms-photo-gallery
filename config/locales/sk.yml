@@ -20,11 +20,11 @@ sk:
         submenu:
           collections:
             title: Skupiny albumov
-            manage: Spravovať
+            manage: Spravovať skupinu
             new: Vytvoriť novú skupinu albumov
           albums:
             title: Abumy
-            manage: Spravovať
+            manage: Spravovať albumy
             new: Vytvoriť nový albun
         collections:
           collection:

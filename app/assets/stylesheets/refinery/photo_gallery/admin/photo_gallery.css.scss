@@ -1,6 +1,3 @@
-.folder_icon {
-  background-image: image-url('refinery/photo_gallery/admin/icons/folder.png');
-}
 .folder_add_icon {
   background-image: image-url('refinery/photo_gallery/admin/icons/folder_add.png');
 }
@@ -31,10 +28,6 @@
 
 
 
-.settings_icon {
-  background-image: image-url('refinery/photo_gallery/admin/icons/cog.png');
-}
-
 ul.collapsible_menu li {
   position: relative;
 }
@@ -47,12 +40,7 @@ ul.collapsible_menu li span.arrow {
   height: 7px;
   cursor: pointer;
 }
-ul.collapsible_menu li span.arrow {
-  background-image: image-url('refinery/photo_gallery/admin/icons/up.gif');
-}
-ul.collapsible_menu li.closed span.arrow {
-  background-image: image-url('refinery/photo_gallery/admin/icons/down.gif');
-}
+
 ul.collapsible_menu > div {
   width: 93%;
   margin: 0px auto;
