@@ -1,0 +1,109 @@
+de:
+  chosen:
+    no_results: Keine Ergebnisse
+  refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "Seite mit Album verbinden:"
+            choose_album: "Fotoalbum wählen"
+            flash:
+              connection_destroyed: "Foto aus Album entfernt."
+    plugins:
+      refinerycms_photo_gallery:
+        title: Fotogalerie
+        description: Fotogalerie-Plugin mit Uploads, Tagging usw.
+        tab_name: Fotogalerie
+    photo_gallery:
+      admin:
+        submenu:
+          collections:
+            title: Sammlungen
+            manage: Sammlungen verwalten
+            new: Neue Sammlung anlegen
+          albums:
+            title: Alben
+            manage: Alben verwalten
+            new: Neues Album anlegen
+        collections:
+          collection:
+            view_live_html: Sammlung zeigen <br/><em>(in neuem Fenster)</em>
+            delete: Sammlung permanent löschen
+            edit: Sammlung bearbeiten
+          index:
+            no_items_yet: Es gibt noch keine Sammlungen. "%{create}" klicken, um eine anzulegen.
+          new:
+            title: Neue Sammlung erstellen
+          edit:
+            title: Sammlung verwalten
+        albums:
+          album:
+            view_live_html: Album anzeigen <br/><em>(in neuem Fenster)</em>
+            delete: Album permanent löschen
+            edit: Album verwalten
+            upload_photos: Neue Fotos für Album hochladen
+            edit_photos: Fotos im Album verwalten
+          index:
+            no_items_yet: Es gibt noch keine Alben. "%{create}" klicken, um eins anzulegen.
+          new:
+            title: Neues Album anlegen
+          edit:
+            title: Album verwalten
+          form:
+            album_belongs_to_collection: Album gehört Sammlung(en)
+            more_options: Weitere Eigenschaften
+            more_options_tooltip: "Weitere Eigenschaften: Anschrift, Notiz, Breiten- und Längengrad"
+            choose_collection: Sammlung auswählen
+            path_prefix: Verzeichnisname
+            number_of_photos: "%{number} Fotos"
+        photos:
+          updated: Fotos aktualisiert
+          title: Fotos
+          manage: Verwalten
+          new: Neue Fotos hochladen
+          edit_multiple:
+            no_photos_yet: Dieses Album enthält noch keine Fotos. "%{create}" klicken, um welche zuzufügen.
+          photo:
+            delete: Foto permanent löschen
+            deleted: Foto "%{title}" gelöscht
+          form_fields:
+            use_decimal_format: Dezimal verwenden
+      photo_pages:
+        show:
+          other: Andere Fotoseiten
+      albums:
+        show:
+          no_photos: Keine Fotos im Album
+        photos:
+          image: Foto
+      collections:
+        show:
+          no_albums: Diese Sammlung enthält noch keine Alben
+        index:
+          no_collections: Es gibt noch keine Sammlungen
+  activerecord:
+    attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: Seite
+      refinery/photo_gallery/collection:
+        title: Titel
+        description: Beschreibung
+      refinery/photo_gallery/album:
+        title: Titel
+        description: Beschreibung
+        longitude: Längengrad
+        latitude: Breitengrad
+        path: Verzeichnis
+        address: Anschrift
+        note: Notiz
+        tags: Tags
+      refinery/photo_gallery/photo:
+        title: Titel
+        description: Beschreibung
+        longitude: Längengrad
+        latitude: Breitengrad
+        path: Verzeichnis
+        file: Datei
+    models:
+      refinery/photo_gallery/collection: Album

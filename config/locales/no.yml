@@ -1,0 +1,109 @@
+en:
+  chosen:
+    no_results: Ingen treff
+  refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "Koble side med album:"
+            choose_album: "Klikk for å velge album"
+            flash:
+              connection_destroyed: "Slettet kobling mellom album og side."
+    plugins:
+      refinerycms_photo_gallery:
+        title: Fotogalleri
+        description: Galleri med opplasting, tagging osv.
+        tab_name: Fotogalleri
+    photo_gallery:
+      admin:
+        submenu:
+          collections:
+            title: Samlinger
+            manage: Behandle samlingene
+            new: Lag en ny fotosamling
+          albums:
+            title: Album
+            manage: Behandle albumene
+            new: Lag et nytt album
+        collections:
+          collection:
+            view_live_html: Vis denne samlingen <br/><em>(i et nytt vindu)</em>
+            delete: Slett denne samlingen permanent
+            edit: Rediger denne samlingen
+          index:
+            no_items_yet: Det finnes ikke noen samlinger enda. Klikk "%{create}" for å lage en samling.
+          new:
+            title: Lag en ny samling
+          edit:
+            title: Behandle denne samlingen
+        albums:
+          album:
+            view_live_html: Vis dette albumet <br/><em>(i et nytt vindu)</em>
+            delete: Slett dette albumet permanent
+            edit: Rediger dette elbumet
+            upload_photos: Last opp et nytt foto til albumet
+            edit_photos: Rediger fotoene i albumet
+          index:
+            no_items_yet: Det finnes ingen album enda. Klikk "%{create}" for å lage et nytt album.
+          new:
+            title: Lag et nytt album.
+          edit:
+            title: Sett tittel
+          form:
+            album_belongs_to_collection: Albumet hører til samling/er
+            more_options: Muligheter
+            more_options_tooltip: Endre andre felt, f.eks. adresse, notat, bredde- og lengdegrad
+            choose_collection: Velg samlinger
+            path_prefix: Katalogprefiks
+            number_of_photos: "Inneholder %{number} foto(s)"
+        photos:
+          updated: Fotos oppdatert
+          title: Fotos
+          manage: Behandle
+          new: Last opp nye fotos
+          edit_multiple:
+            no_photos_yet: Det er ingen fotos i albumet enda. Klikk "%{create} for å legge til noen fotos.
+          photo:
+            delete: Slett dette bildet permanent.
+            deleted: Slettet "%{title}"
+          form_fields:
+            use_decimal_format: Bruk desimalformat
+      photo_pages:
+        show:
+          other: Andre fotosider
+      albums:
+        show:
+          no_photos: Det er ingen fotos i dette albumet enda
+        photos:
+          image: Foto
+      collections:
+        show:
+          no_albums: Det er ingen album i denne samlingen enda
+        index:
+          no_collections: Det er ingen samlinger her enda
+  activerecord:
+    attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: Side
+      refinery/photo_gallery/collection:
+        title: Tittel
+        description: Beskrivelse
+      refinery/photo_gallery/album:
+        title: Tittel
+        description: Beskrivelse
+        longitude: Lengdegrad
+        latitude: Breddegrad
+        path: Katalog
+        address: Adresse
+        note: Notat
+        tags: Tagger
+      refinery/photo_gallery/photo:
+        title: Tittel
+        description: Beskrivelse
+        longitude: Lengdegrad
+        latitude: Breddegrad
+        path: Katalog
+        file: Fil
+    models:
+      refinery/photo_gallery/collection: Album
