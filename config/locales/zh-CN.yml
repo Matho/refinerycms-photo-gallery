@@ -1,0 +1,109 @@
+zh-CN:
+  chosen:
+    no_results: "没有匹配的结果"
+  refinery:
+    admin:
+      pages:
+        tabs:
+          form:
+            join_page_with_album: "添加相册到页面"
+            choose_album: "点击选择相册"
+            flash:
+              connection_destroyed: "相册与页面之间的关联已经成功删除。"
+    plugins:
+      refinerycms_photo_gallery:
+        title: 图片库
+        description: 提供高级的图片库
+        tab_name: 图片库
+    photo_gallery:
+      admin:
+        submenu:
+          collections:
+            title: 合辑
+            manage: 管理合辑
+            new: 新建合辑
+          albums:
+            title: 相册
+            manage: 管理相册
+            new: 新建相册
+        collections:
+          collection:
+            view_live_html: 查看合辑的最新内容.<br/><em>(新窗口中打开)</em>
+            delete: 永久删除合辑
+            edit: 编辑合辑
+          index:
+            no_items_yet: 目前没有合辑。点击"%{create}"创建你的第一个合辑。
+          new:
+            title: 新建合辑
+          edit:
+            title: 编辑合辑
+        albums:
+          album:
+            view_live_html: 查看相册的最新内容.<br/><em>(新窗口中打开)</em>
+            delete: 永久删除相册
+            edit: 编辑相册
+            upload_photos: 上传新图片到相册
+            edit_photos: 编辑当前相册的图片
+          index:
+            no_items_yet: 目前没有相册。点击"%{create}"创建你的第一个相册。
+          new:
+            title: 新建相册
+          edit:
+            title: 编辑相册
+          form:
+            album_belongs_to_collection: 相册从属于合辑
+            more_options: 更多选项
+            more_options_tooltip: 编辑更多字段，例如地址、纬度、经度和注释
+            choose_collection: 选择合辑
+            path_prefix: 路径前缀
+            number_of_photos: 包含 %{number} 张图片
+        photos:
+          updated: 图片已上传
+          title: 图片
+          manage: 管理
+          new: 上传新图片
+          edit_multiple:
+            no_items_yet: 目前相册里没有图片。点击"%{create}"添加你的第一张图片到相册。
+          photo:
+            delete: 永久删除图片
+            deleted: 图片已删除 "%{title}"
+          form_fields:
+            use_decimal_format: 使用十进制
+      photo_pages:
+        show:
+          other: 其他带相册的页面
+      albums:
+        show:
+          no_photos: 相册内目前没有图片
+        photos:
+          image: 图片
+      collections:
+        show:
+          no_albums: 合辑内目前没有相册
+        index:
+          no_collections: 目前没有合辑
+  activerecord:
+    attributes:
+      refinery/photo_gallery/photo_page:
+        page_id: 页面
+      refinery/photo_gallery/collection:
+        title: 标题
+        description: 描述
+      refinery/photo_gallery/album:
+        title: 标题
+        description: 描述
+        longitude: 经度
+        latitude: 纬度
+        path: 路径
+        address: 地址
+        note: 注释
+        tags: 标签
+      refinery/photo_gallery/photo:
+        title: 标题
+        description: 描述
+        longitude: 经度
+        latitude: 纬度
+        path: 路径
+        file: 文件
+    models:
+      refinery/photo_gallery/collection: 相册
