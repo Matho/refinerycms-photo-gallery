@@ -4,9 +4,11 @@ __Photo gallery engine for Refinery CMS.__
 
 ## Requirements
 
-Currently unreleased version 0.2.x in master branch supports Rails 4.2.x and Refinery CMS ~> 3.0.0
+Currently unreleased version 0.3.x in master branch supports Rails 4.2.x and Refinery CMS ~> 3.0.0
 
-Previous versions of refinerycms-photo-gallery supports Rails 3.2.x and Refinery CMS ~> 2.0.3.
+Previous branches supports:
+* 0-2-stable: Rails 4.2.x and Refinery CMS ~> 3.0.0
+* 0-1-stable: Rails 3.2.x and Refinery CMS ~> 2.0.3
 
 ## Features
 
