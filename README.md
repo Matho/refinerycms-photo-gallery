@@ -12,7 +12,7 @@ Previous branches supports:
 
 ## Features
 
-* Multiple photo uploading with [Plupload](http://www.plupload.com/) 1.5.4
+* Multiple photo uploading with [Plupload](http://www.plupload.com/) 2.1.9
 * Only HTML5 runtime is supported
 * Client side photo resizing to do faster uploading on slow connections
 * Server side resizing with Carrierwave
@@ -57,7 +57,7 @@ Client side image resizing with Plupload is possible on Firefox 3.5+ (with fixed
 Safari doesn't support direct data access to the selected files. Opera 12.00 + supports drag&drop and also client side image resizing.
 
 
-## Installation for ~> 0.2.0
+## Installation for ~> 0.3.0
 
 Make sure, you [have installed ImageMagick](http://www.imagemagick.org/script/install-source.php#unix) and ImageMagick dev.
 On Ubuntu 12.04 you can install dev suite with commands:
@@ -71,14 +71,14 @@ Instructions for installation you can find under [www.sno.phy.queensu.ca/~phil/e
 
 
 Open up your ``Gemfile`` and add at the bottom this line:
--for edge version:
+* for edge version:
 ```ruby
-gem 'refinerycms-photo-gallery', '~> 0.2.0', :github=>"Matho/refinerycms-photo-gallery", :branch=>"master"
+gem 'refinerycms-photo-gallery', '~> 0.3.0', :github=>"Matho/refinerycms-photo-gallery", :branch=>"master"
 ```
 
--for latest stable version
+* for latest stable version
 ```ruby
-gem 'refinerycms-photo-gallery', '~> 0.1.0'
+gem 'refinerycms-photo-gallery', '~> 0.2.0'
 ```
 
 Now, run 

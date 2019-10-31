@@ -1,4 +1,4 @@
-## 0.2.0 [unreleased]
+## 0.2.0 [29 December 2016]
 * introduce support for Rails 4.2 and Refinery 3.0
 * introduce Strong Parameters protection instead of attr_*
 * change Plupload version from 1.5.9 to 2.1.9 due to JQuery incompatibilities
