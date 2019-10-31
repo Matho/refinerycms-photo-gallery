@@ -1,5 +1,6 @@
 ## 0.3.0 [unreleased]
 * Fix mini_magick version to >= 4.9.4, due to CVE-2019-13574 vulnerability
+* Change rack version to >= 1.6.11 due to CVE-2018-16471 vulnerability
 
 
 ## 0.2.0 [29 December 2016]
