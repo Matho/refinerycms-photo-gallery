@@ -49,7 +49,7 @@ All screenshots are in branch screenshots
 
 ## Language
 
-Gem is fully translated to slovak and english. Plupload is translated to 24 languages. You can add your own to
+Gem is fully translated to de, en, no, pl, sk, zh-CN languages. Plupload is translated to 24 languages. You can add your own to
 photo_gallery/app/assets/javascripts/refinery/photo_gallery/admin/plupload/i18n and enable it in config.plupload_locale
 
 ## Browser support
