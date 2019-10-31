@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency    'refinerycms-core',     '~> 3.0.5'
   s.add_dependency    'mime-types'
   s.add_dependency    'carrierwave', '0.6.2'
-  s.add_dependency    'mini_magick'
+  s.add_dependency    'mini_magick', ">= 4.9.4"
   s.add_dependency    'mini_exiftool'
 
   # Development dependencies

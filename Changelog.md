@@ -1,3 +1,7 @@
+## 0.3.0 [unreleased]
+* Fix mini_magick version to >= 4.9.4, due to CVE-2019-13574 vulnerability
+
+
 ## 0.2.0 [29 December 2016]
 * introduce support for Rails 4.2 and Refinery 3.0
 * introduce Strong Parameters protection instead of attr_*
