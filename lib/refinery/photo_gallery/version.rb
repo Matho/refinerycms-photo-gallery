@@ -2,7 +2,7 @@ module Refinery
   module PhotoGallery
     class Version
       @major = 0
-      @minor = 2
+      @minor = 3
       @tiny  = '0'
 
       class << self
