@@ -259,9 +259,8 @@ Remove gem from Gemfile
 * cd to this engine path
 * bundle install
 * rake refinery:testing:dummy_app
+* Add at the end of file `Rails.application.config.assets.precompile += %w( refinery/photo_gallery/admin/jquery.chosen.min.js refinery/photo_gallery/admin/photo_gallery.js refinery/photo_gallery/admin/photo_gallery.css refinery/photo_gallery/admin/chosen.css refinery/photo_gallery/admin/icons/loading.gif refinery/wymeditor.js )` to `spec/dummy/config/initializers/assets.rb`
 * rake spec
-* Probably you will need to set some asset manifest to dummy's app manifest - see console output for errors
-
 
 ## Todo list
 

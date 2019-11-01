@@ -2,6 +2,7 @@
 * Fix mini_magick version to >= 4.9.4, due to CVE-2019-13574 vulnerability
 * Change rack version to >= 1.6.11 due to CVE-2018-16471 vulnerability
 * Add locales for de, no, zh-CN
+* Added support for Rails 5.1 and Refinery 4.0.3
 
 ## 0.2.0 [29 December 2016]
 * introduce support for Rails 4.2 and Refinery 3.0
