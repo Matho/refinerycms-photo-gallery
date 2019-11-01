@@ -1,4 +1,4 @@
-## 0.3.0 [unreleased]
+## 0.3.0 [1 November 2019]
 * Fix mini_magick version to >= 4.9.4, due to CVE-2019-13574 vulnerability
 * Change rack version to >= 1.6.11 due to CVE-2018-16471 vulnerability
 * Add locales for de, no, zh-CN
