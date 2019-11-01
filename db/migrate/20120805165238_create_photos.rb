@@ -1,6 +1,6 @@
-class CreatePhotos < ActiveRecord::Migration
+class CreatePhotos < ActiveRecord::Migration[4.2]
   def self.up
-    create_table "refinery_photo_gallery_photos" do |t|
+    create_table Refinery::PhotoGallery::Photo.table_name  do |t|
       t.string :title, :length => 250, :null => false
       t.text :description
       t.string :path, :length => 100, :null=> true
@@ -14,6 +14,6 @@ class CreatePhotos < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table "refinery_photo_gallery_photos"
+    drop_table Refinery::PhotoGallery::Photo.table_name
   end
 end

@@ -34,7 +34,7 @@ module Refinery
 
 
         def update_multiple
-          photo_ids = update_multiple_photo_params["photo"].map{ |key, hash| key }
+          photo_ids = update_multiple_photo_params["photo"].keys
 
           @photos = Photo.find(photo_ids)
           @photos.each do |photo|

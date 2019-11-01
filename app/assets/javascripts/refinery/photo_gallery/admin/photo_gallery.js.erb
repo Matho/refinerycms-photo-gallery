@@ -16,15 +16,6 @@ $(function() {
     return false;
   });
 
-  $('#more_photo_options_field #toggle_advanced_options').click(function(e){
-    e.preventDefault();
-    $('#more_options').animate({opacity: 'toggle', height: 'toggle'}, 250);
-
-    $('html,body').animate({
-      scrollTop: $('#toggle_advanced_options').parent().offset().top
-    }, 250);
-  });
-
   $(".chzn-select").chosen(
       {
         no_results_text: "<%= I18n.t('chosen.no_results') %>"

@@ -1,4 +1,4 @@
-class AddIndexes < ActiveRecord::Migration
+class AddIndexes < ActiveRecord::Migration[4.2]
   def self.up
     add_index Refinery::PhotoGallery::Album.table_name, :id, :unique => true
     add_index Refinery::PhotoGallery::Collection.table_name, :id, :unique => true

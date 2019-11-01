@@ -20,7 +20,7 @@
     <%= link_to (image_tag 'refinery/photo_gallery/admin/icons/album_edit.png'),
                 refinery.edit_photo_gallery_admin_album_path(album),
          :title => t('.edit') %>
-    <%= link_to refinery_icon_tag("delete.png"), refinery.photo_gallery_admin_album_path(album),
+    <%= link_to image_tag('refinery/icons/delete.png'), refinery.photo_gallery_admin_album_path(album),
         :class => "cancel confirm-delete",
         :title => t('.delete'),
         :method => :delete,

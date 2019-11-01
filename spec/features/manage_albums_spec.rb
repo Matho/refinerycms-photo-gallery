@@ -61,7 +61,7 @@ describe "manage album items", :type => :feature do
   end
 
   describe "edit/update" do
-    before { FactoryGirl.create(:album, :title => "Update me") }
+    before { FactoryBot.create(:album, :title => "Update me") }
 
     it "updates album" do
       visit refinery.photo_gallery_admin_albums_path
@@ -78,7 +78,7 @@ describe "manage album items", :type => :feature do
   end
 
   describe "destroy" do
-    before { FactoryGirl.create(:album, :title => "Delete me") }
+    before { FactoryBot.create(:album, :title => "Delete me") }
 
     it "removes album" do
       visit refinery.photo_gallery_admin_albums_path

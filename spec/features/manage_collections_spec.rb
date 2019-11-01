@@ -30,7 +30,7 @@ describe "manage collection items", :type => :feature do
   end
 
   describe "edit/update" do
-    before { FactoryGirl.create(:collection, :title => "Update me") }
+    before { FactoryBot.create(:collection, :title => "Update me") }
 
     it "updates collection" do
       visit refinery.photo_gallery_admin_collections_path
@@ -47,7 +47,7 @@ describe "manage collection items", :type => :feature do
   end
 
   describe "destroy" do
-    before { FactoryGirl.create(:collection, :title => "Delete me") }
+    before { FactoryBot.create(:collection, :title => "Delete me") }
 
     it "removes collection" do
       visit refinery.photo_gallery_admin_collections_path

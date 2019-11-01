@@ -5,7 +5,7 @@ module Refinery
 
         def self.included(base)
           base.class_eval do
-            before_filter :ajax_photo_gallery, :only => :show
+            before_action :ajax_photo_gallery, :only => :show
 
 
             def ajax_photo_gallery

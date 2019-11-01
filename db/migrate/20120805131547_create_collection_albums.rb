@@ -1,4 +1,4 @@
-class CreateCollectionAlbums < ActiveRecord::Migration
+class CreateCollectionAlbums < ActiveRecord::Migration[4.2]
   def self.up
     create_table Refinery::PhotoGallery::CollectionAlbum.table_name do |t| #TODO primary id to false
       t.references :collection

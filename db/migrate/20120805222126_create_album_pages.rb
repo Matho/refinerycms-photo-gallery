@@ -1,4 +1,4 @@
-class CreateAlbumPages < ActiveRecord::Migration
+class CreateAlbumPages < ActiveRecord::Migration[4.2]
 
   def up
     create_table :refinery_album_pages do |t|

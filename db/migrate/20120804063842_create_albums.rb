@@ -1,6 +1,6 @@
-class CreateAlbums < ActiveRecord::Migration
+class CreateAlbums < ActiveRecord::Migration[4.2]
   def self.up
-    create_table "refinery_photo_gallery_albums" do |t|
+    create_table  Refinery::PhotoGallery::Album.table_name  do |t|
       t.string :title, :length => 250, :null => false
       t.text :description
       t.string :path, :length => 100, :null=> true
@@ -13,6 +13,6 @@ class CreateAlbums < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table "refinery_photo_gallery_albums"
+    drop_table Refinery::PhotoGallery::Album.table_name
   end
 end

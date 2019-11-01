@@ -19,13 +19,12 @@ module Refinery
         select("refinery_photo_gallery_albums.*, refinery_photo_gallery_collection_albums.collection_id ").joins(:collection_albums)
       end
 
-      scope :find_by_collection_id, lambda {|collection_id|
-        select("refinery_photo_gallery_albums.*").
-            joins(:collection_albums).
-            where("refinery_photo_gallery_collection_albums.collection_id = ?
-                    ", collection_id).
-            order('created_at DESC, title ASC')
-      }
+      # scope :find_by_collection_id, ->(collection_id) {
+      #   select("refinery_photo_gallery_albums.*").
+      #     joins(:collection_albums).
+      #     where("refinery_photo_gallery_collection_albums.collection_id = ?", collection_id).
+      #     order('created_at DESC, title ASC')
+      # }
 
       def collection_ids
         Refinery::PhotoGallery::CollectionAlbum.select('collection_id').where("album_id = ?", self.id ).map{|ca| ca.collection_id }

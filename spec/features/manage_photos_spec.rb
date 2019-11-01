@@ -6,7 +6,7 @@ describe "manage photo items", :type => :feature do
 
   describe "edit/update" do
     before do
-      FactoryGirl.create(:album_with_photos, :title => "Album name")
+      FactoryBot.create(:album_with_photos, :title => "Album name")
     end
 
     it "updates photo" do
@@ -29,7 +29,7 @@ describe "manage photo items", :type => :feature do
 
   describe "destroy" do
     before do
-      FactoryGirl.create(:album_with_photos, :title => "Album name")
+      FactoryBot.create(:album_with_photos, :title => "Album name")
     end
 
     it "removes photo" do

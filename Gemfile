@@ -1,13 +1,18 @@
 source "https://rubygems.org"
 
-gem "refinerycms-authentication-devise", '~> 1.0.4'
+# this is due to renaming FactoryGirl -> FactoryBot. You do not need to use this version exactly
+gem "refinerycms-authentication-devise", '~> 2.0.1',  git: 'https://github.com/refinery/refinerycms-authentication-devise', ref: "4fbe5428ea2fd2bfe033617d50c47dc2ce14351d"
 
 gemspec
 
-gem 'refinerycms', '~> 3.0.6'
+gem 'refinerycms', '~> 4.0.3'
 
 group :development, :test do
-  gem 'refinerycms-testing', '~> 3.0.6'
+  gem 'listen'
+end
+
+group :development, :test do
+  gem 'refinerycms-testing', '~> 4.0.3'
 end
 
 # Add the default visual editor, for now.

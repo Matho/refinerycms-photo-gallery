@@ -5,7 +5,7 @@ module Refinery
         def has_one_page_album
           has_one :album_page, :as => :page, :dependent=> :destroy
           has_one :album, :through => :album_page
-          has_many :photos, -> {order "created_at ASC"}, class_name: Refinery::PhotoGallery::Photo, through: :album
+          has_many :photos, -> {order "created_at ASC"}, class_name: 'Refinery::PhotoGallery::Photo', through: :album
 
 
           accepts_nested_attributes_for :album_page
