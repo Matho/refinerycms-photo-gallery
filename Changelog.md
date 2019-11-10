@@ -1,3 +1,6 @@
+## 0.4.0 [unreleased]
+* Prepare gem for Rails 6 and Refinery CMS > 4 
+
 ## 0.3.0 [1 November 2019]
 * Fix mini_magick version to >= 4.9.4, due to CVE-2019-13574 vulnerability
 * Change rack version to >= 1.6.11 due to CVE-2018-16471 vulnerability

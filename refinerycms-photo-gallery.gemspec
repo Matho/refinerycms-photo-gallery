@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files        = `git ls-files -- spec/*`.split("\n")
 
   # Runtime dependencies
-  s.add_dependency    'refinerycms-core',  '~> 4.0.3'
+  s.add_dependency    'refinerycms-core',  '~> 4.1.0'
   s.add_dependency    'mime-types'
   s.add_dependency    'carrierwave', '~> 1.3.1'
   s.add_dependency    'mini_magick', ">= 4.9.4"
@@ -26,5 +26,5 @@ Gem::Specification.new do |s|
   s.add_dependency    'rack', ">= 1.6.11"
 
   # Development dependencies
-  s.add_development_dependency 'refinerycms-testing', '~> 4.0.3'
+  # s.add_development_dependency 'refinerycms-testing', '~> 4.0.3'
 end

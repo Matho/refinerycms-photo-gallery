@@ -5,14 +5,15 @@ gem "refinerycms-authentication-devise", '~> 2.0.1',  git: 'https://github.com/r
 
 gemspec
 
-gem 'refinerycms', '~> 4.0.3'
+gem 'refinerycms', '~> 4.1.0', git: 'https://github.com/refinery/refinerycms.git', branch: 'master'
+gem 'actionmailer', '~> 6.0.0'
 
 group :development, :test do
   gem 'listen'
 end
 
 group :development, :test do
-  gem 'refinerycms-testing', '~> 4.0.3'
+  # gem 'refinerycms-testing', '~> 4.0.3'
 end
 
 # Add the default visual editor, for now.
